@@ -1,4 +1,4 @@
-# DEV3-1920-Plan-it
+# DEV3-1920-Pet-Planner
 
 Pet Planner Concept:
 
