@@ -12,6 +12,8 @@ If you have any pets with a diet, you can manage the food and amount they need.
 
 Preview design:
 
-![Image of Home Page](https://github.com/devinekask/1920-DEV3-plan-it-geenens-vandeweghe/tree/develop/src/assets/preview/home.png)
-![Image of Calendar Page](https://github.com/devinekask/1920-DEV3-plan-it-geenens-vandeweghe/tree/develop/src/assets/preview/calendar.png)
-![Image of Pets Page](https://github.com/devinekask/1920-DEV3-plan-it-geenens-vandeweghe/tree/develop/src/assets/preview/pets.png)
+![Image of Home Page](https://github.com/devinekask/1920-DEV3-plan-it-geenens-vandeweghe/tree/develop/src/assets/preview/home.png?raw=true)
+
+![Image of Calendar Page](https://github.com/devinekask/1920-DEV3-plan-it-geenens-vandeweghe/tree/develop/src/assets/preview/calendar.png?raw=true)
+
+![Image of Pets Page](https://github.com/devinekask/1920-DEV3-plan-it-geenens-vandeweghe/blob/develop/src/assets/preview/pets.png?raw=true)
