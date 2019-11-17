@@ -1,1 +1,1 @@
-
+require('./style.css');
