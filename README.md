@@ -17,3 +17,4 @@ Preview design:
 ![Image of Calendar Page](https://github.com/devinekask/1920-DEV3-plan-it-geenens-vandeweghe/blob/develop/src/assets/preview/calendar.png)
 
 ![Image of Pets Page](https://github.com/devinekask/1920-DEV3-plan-it-geenens-vandeweghe/blob/develop/src/assets/preview/pets.png)
+
