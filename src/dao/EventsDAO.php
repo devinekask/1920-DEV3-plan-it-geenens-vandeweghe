@@ -2,17 +2,17 @@
 
 require_once( __DIR__ . '/DAO.php');
 
-class PetsDAO extends DAO {
+class TodoDAO extends DAO {
 
   public function selectAll(){
-    $sql = "SELECT * FROM `pets`";
+    $sql = "SELECT * FROM `todos`";
     $stmt = $this->pdo->prepare($sql);
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
 
   public function selectById($id){
-    $sql = "SELECT * FROM `pets` WHERE `id` = :id";
+    $sql = "SELECT * FROM `todos` WHERE `id` = :id";
     $stmt = $this->pdo->prepare($sql);
     $stmt->bindValue(':id', $id);
     $stmt->execute();
@@ -20,7 +20,7 @@ class PetsDAO extends DAO {
   }
 
   public function delete($id){
-    $sql = "DELETE FROM `pets` WHERE `id` = :id";
+    $sql = "DELETE FROM `todos` WHERE `id` = :id";
     $stmt = $this->pdo->prepare($sql);
     $stmt->bindValue(':id', $id);
     return $stmt->execute();
@@ -29,7 +29,7 @@ class PetsDAO extends DAO {
   public function insert($data) {
     $errors = $this->validate( $data );
     if (empty($errors)) {
-      $sql = "INSERT INTO `pets` (`created`, `modified`, `checked`, `text`) VALUES (:created, :modified, :checked, :text)";
+      $sql = "INSERT INTO `todos` (`created`, `modified`, `checked`, `text`) VALUES (:created, :modified, :checked, :text)";
       $stmt = $this->pdo->prepare($sql);
       $stmt->bindValue(':created', $data['created']);
       $stmt->bindValue(':modified', $data['modified']);
