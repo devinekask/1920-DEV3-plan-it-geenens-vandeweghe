@@ -31,7 +31,7 @@
     <h2 class="hidden">Dashboard</h2>
       <div class="dashboard">
         <a href="" class="dashboard__item green">Pet</a>
-        <a href="" class="dashboard__item red">x</a>
+        <a href="" class="dashboard__item red">Pets</a>
         <a href="" class="dashboard__item orange">idk</a>
         <a href="" class="dashboard__item yellow">Vets</a>
         <a href="" class="dashboard__item blue">calendar</a>
