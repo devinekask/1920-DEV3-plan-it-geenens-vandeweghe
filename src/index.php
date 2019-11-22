@@ -26,7 +26,19 @@ $routes = array(
   'pets' => array(
     'controller' => 'Pets',
     'action' => 'pets'
-  )
+  ),
+  'events' => array(
+    'controller' => 'Pets',
+    'action' => 'events'
+  ),
+  'detail' => array(
+    'controller' => 'Pets',
+    'action' => 'detail'
+  ),
+  'pet' => array(
+    'controller' => 'Pets',
+    'action' => 'pet'
+  ),
 );
 
 if(empty($_GET['page'])) {
