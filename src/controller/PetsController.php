@@ -12,56 +12,12 @@ class PetsController extends Controller {
   }
 
   public function index() {
-    if (!empty($_POST['action'])) {
-      if ($_POST['action'] == 'insertPet') {
-        $this->handleInsertTodo();
-      }
+      $this->set('title', 'Home');
+      $this->set('currentPage', 'index');
     }
 
-    $pets = $this->petDAO->selectAll();
-    $this->set('pets', $pets);
-    $this->set('title', 'Overview');
-
-    if (strtolower($_SERVER['HTTP_ACCEPT']) == 'application/json') {
-      header('Content-Type: application/json');
-      echo json_encode($todos);
-      exit();
+  public function pets() {
+      
+      $this->set('title', 'Pets');
     }
-  }
-
-  private function handleInsertTodo() {
-    $data = array(
-      'created' => date('Y-m-d H:i:s'),
-      'modified' => date('Y-m-d H:i:s'),
-      'checked' => 0,
-      'text' => $_POST['text']
-    );
-    $insertTodoResult = $this->todoDAO->insert($data);
-    if (!$insertTodoResult) {
-      $errors = $this->todoDAO->validate($data);
-      $this->set('errors', $errors);
-      if (strtolower($_SERVER['HTTP_ACCEPT']) == 'application/json') {
-        header('Content-Type: application/json');
-        echo json_encode(array(
-          'result' => 'error',
-          'errors' => $errors
-        ));
-        exit();
-      }
-      $_SESSION['error'] = 'De todo kon niet toegevoegd worden!';
-    } else {
-      if (strtolower($_SERVER['HTTP_ACCEPT']) == 'application/json') {
-        header('Content-Type: application/json');
-        echo json_encode(array(
-          'result' => 'ok',
-          'todo' => $insertTodoResult
-        ));
-        exit();
-      }
-      $_SESSION['info'] = 'De todo is toegevoegd!';
-      header('Location: index.php');
-      exit();
-    }
-  }
-
 }
