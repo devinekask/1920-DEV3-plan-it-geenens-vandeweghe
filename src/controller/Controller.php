@@ -8,7 +8,7 @@ class Controller {
 
   public function filter() {
     if (basename(dirname(dirname(__FILE__))) != 'src') {
-      $this->env = 'production';
+      $this->env = 'development';
     }
     call_user_func(array($this, $this->route['action']));
   }
@@ -18,7 +18,7 @@ class Controller {
     $this->set('js', '<script src="http://localhost:8080/script.js"></script>');
     // webpack dev server: css is injected by the script
     $this->set('css', '');
-    if ($this->env == 'production') {
+    if ($this->env == 'development') {
       // regular script in production
       $this->set('js', '<script src="script.js"></script>');
        // regular css in production
