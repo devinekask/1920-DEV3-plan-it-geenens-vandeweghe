@@ -45,7 +45,7 @@
     <a href="index.php?page=index" class="active">
       <img src="./assets/images/homeselected.svg" alt="home">
     </a>
-    <a href="index.php?page=pet">
+    <a href="index.php?page=pets">
       <img src="./assets/images/pets.svg" alt="pets">
     </a>
     <a href="index.php?page=events">
