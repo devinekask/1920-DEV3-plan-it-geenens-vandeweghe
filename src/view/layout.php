@@ -42,13 +42,13 @@
 
         <!-- Footer/Navigation -->
   <footer>
-    <a href="#home" class="active">
+    <a href="index.php?page=index" class="active">
       <img src="./assets/images/homeselected.svg" alt="home">
     </a>
-    <a href="#pets">
+    <a href="index.php?page=pet">
       <img src="./assets/images/pets.svg" alt="pets">
     </a>
-    <a href="#calendar">
+    <a href="index.php?page=events">
       <img src="./assets/images/calendar.svg" alt="calendar">
     </a>
   </footer>
