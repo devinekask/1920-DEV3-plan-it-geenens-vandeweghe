@@ -38,6 +38,20 @@
     </div>
         <?php echo $content;?>
         </section>
+
+
+        <!-- Footer/Navigation -->
+  <footer>
+    <a href="#home" class="active">
+      <img src="./assets/images/homeselected.svg" alt="home">
+    </a>
+    <a href="#pets">
+      <img src="./assets/images/pets.svg" alt="pets">
+    </a>
+    <a href="#calendar">
+      <img src="./assets/images/calendar.svg" alt="calendar">
+    </a>
+  </footer>
     <?php echo $js; ?>
   </body>
 </html>
