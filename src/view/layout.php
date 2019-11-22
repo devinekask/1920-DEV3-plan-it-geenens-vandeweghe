@@ -30,14 +30,15 @@
 <section class="players">
     <h2 class="hidden">Dashboard</h2>
       <div class="dashboard">
-        <a href="" class="dashboard__item green">Pet</a>
-        <a href="" class="dashboard__item red">Pets</a>
-        <a href="" class="dashboard__item orange">idk</a>
-        <a href="" class="dashboard__item yellow">Vets</a>
-        <a href="" class="dashboard__item blue">calendar</a>
+        <a href="index.php?page=Paw" class="dashboard__item green">Paw</a>
+        <a href="index.php?page=pet" class="dashboard__item red">Pets</a>
+        <a href="index.php?page=home" class="dashboard__item orange">idk</a>
+        <a href="index.php?page=pets" class="dashboard__item yellow">Vets</a>
+        <a href="index.php?page=Calendar" class="dashboard__item blue">Calendar</a>
     </div>
         <?php echo $content;?>
         </section>
     <?php echo $js; ?>
   </body>
 </html>
+
