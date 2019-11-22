@@ -3,10 +3,6 @@
 class DAO {
 
   // Properties
-  private static $dbHost = "ID282148_petplanner.db.webhosting.be";
-	private static $dbName = "ID282148_petplanner";
-	private static $dbUser = "ID282148_petplanner";
-	private static $dbPass = "Petplanner20192020";
 	private static $sharedPDO;
 	protected $pdo;
 
@@ -14,7 +10,13 @@ class DAO {
 	function __construct() {
 
 		if(empty(self::$sharedPDO)) {
-			self::$sharedPDO = new PDO("mysql:host=" . self::$dbHost . ";dbname=" . self::$dbName, self::$dbUser, self::$dbPass);
+
+      $dbHost = getenv('PHP_DB_HOST') ?: "ID282148_petplanner.db.webhosting.be";
+      $dbName = getenv('PHP_DB_DATABASE') ?: "ID282148_petplanner";
+      $dbUser = getenv('PHP_DB_USERNAME') ?: "ID282148_petplanner";
+      $dbPass = getenv('PHP_DB_PASSWORD') ?: "Petplanner20192020";
+
+			self::$sharedPDO = new PDO("mysql:host=" . $dbHost . ";dbname=" . $dbName, $dbUser, $dbPass);
 			self::$sharedPDO->exec("SET CHARACTER SET utf8");
 			self::$sharedPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			self::$sharedPDO->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
