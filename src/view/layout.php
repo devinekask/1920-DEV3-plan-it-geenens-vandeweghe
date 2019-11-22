@@ -30,11 +30,11 @@
 <section class="players">
     <h2 class="hidden">Dashboard</h2>
       <div class="dashboard">
-        <a href="index.php?page=addevent" class="dashboard__item green">Paw</a>
-        <a href="index.php?page=addpet" class="dashboard__item red">Pets</a>
-        <a href="index.php?page=index" class="dashboard__item orange">idk</a>
-        <a href="index.php?page=pets" class="dashboard__item yellow">pets</a>
-        <a href="index.php?page=pet" class="dashboard__item blue">pet</a>
+        <a href="index.php?page=pets" class="dashboard__item green">Paw</a>
+        <a href="index.php?" class="dashboard__item red">Unassigned</a>
+        <a href="index.php?" class="dashboard__item orange">Unassigned</a>
+        <a href="index.php?" class="dashboard__item yellow">Unassigned</a>
+        <a href="index.php?" class="dashboard__item blue">Unassigned</a>
     </div>
         <?php echo $content;?>
         </section>
