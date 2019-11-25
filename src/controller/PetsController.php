@@ -17,7 +17,12 @@ class PetsController extends Controller {
     }
 
   public function pets() {
-      
+
       $this->set('title', 'Pets');
+    }
+
+  public function events() {
+
+      $this->set('title', 'Events');
     }
 }

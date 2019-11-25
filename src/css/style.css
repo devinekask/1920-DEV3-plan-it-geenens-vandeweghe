@@ -13,6 +13,15 @@ header {
 footer {
   display: flex;
   justify-content: space-around;
+  margin-left: -1.2rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0rem -0.1rem 1rem black;
+}
+
+a {
+  padding: 3rem 3rem 0 3rem;
 }
 
 .header-right {
@@ -22,7 +31,6 @@ footer {
 .center {
   text-align: center;
 }
-
 
 .dashboard {
   color: white;
@@ -37,7 +45,7 @@ footer {
 
 .green {
   grid-area: 1 / 1 / 3 / 3;
-  background-color: #61CB96;
+  background-color: #61cb96;
   height: 105px;
   border-radius: 4px;
 
@@ -45,36 +53,35 @@ footer {
 
 .red {
   grid-area: 1 / 3 / 2 / 5;
-  background-color: #ED7A84;
+  background-color: #ed7a84;
   height: 48px;
   border-radius: 4px;
 }
 
 .orange {
   grid-area: 2 / 3 / 3 / 5;
-  background-color: #ED8052;
+  background-color: #ed8052;
   height: 48px;
   border-radius: 4px;
 }
 
-
 .yellow {
   grid-area: 1 / 5 / 2 / 7;
-  background-color: #F7C75F;
+  background-color: #f7c75f;
   height: 48px;
   border-radius: 4px;
 }
 
 .blue {
   grid-area: 2 / 5 / 3 / 7;
-  background-color: #70CBD3;
+  background-color: #70cbd3;
   height: 48px;
   border-radius: 4px;
 }
 
 .right {
   float: right;
-  color: #61CB96;
+  color: #61cb96;
 }
 
 .dashboard__item {
@@ -84,7 +91,6 @@ footer {
   text-decoration: none;
   color: white;
 }
-
 
 .pets {
   display: grid;
