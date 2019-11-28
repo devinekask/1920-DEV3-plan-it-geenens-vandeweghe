@@ -1,30 +1,33 @@
-<ol id="petList">
-</ol>
-<?php
-if (!empty($insertPetResult)) {
-?>
-  <p>Your pet has been added!</p>
-<?php
-} else {
-  if (!empty($errors)) {
-    echo '<div class="error">Gelieve de verplichte velden in te vullen</div>';
-  }
-?>
-<form id="insertPetForm" method="post" action="index.php">
-  <input type="hidden" name="action" value="inserPet" />
-  <div>
-    <label for="inputText">text:</label>
-    <input type="text" id="inputText" name="text" value="<?php
-    if (!empty($_POST['text'])) {
-      echo $_POST['text'];
-    }
-    ?>" />
-    <span class="error error--text"><?php if (!empty($errors['text'])) echo $errors['text'];?></span>
-  </div>
-  <div>
-    <button type="submit">Add Pet</button>
-  </div>
+<form id="insertPet" method="post" action="index.php?page=addpet">
+<input type="hidden" name="action" value="insertPet">
+<div>
+    Which kind of animal would you like to add?: <input type="text" name="kind"><br>
+
+     </div>
+    <label for="name">
+    What is the name of this lovely ?
+    <input type="text" name="name"><br>
+     </label>
+    <label for="birthd">
+    When was your pet born to this world?
+    <input type="text" name="birthd"><br>
+     </label>
+    <label for="chip">
+    Was your pet chipped?
+    <input type="text" name="chip"><br>
+     </label>
+    <label for="chipid">
+    What is your pet’s chip-id?
+    <input type="text" name="chipid"><br>
+     </label>
+    <label for="gender">
+    What is your pet’s gender?
+    <input type="text" name="gender"><br>
+     </label>
+    <label for="owner">
+    Who is the owner of your pet?
+    <input type="text" name="owner"><br>
+     </label>
+
+  <input type="submit">
 </form>
-<?php
-}
-?>

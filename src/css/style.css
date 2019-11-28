@@ -18,10 +18,11 @@ footer {
   bottom: 0;
   width: 100%;
   box-shadow: 0rem -0.1rem 1rem black;
+  padding: 3rem 3rem 0 3rem;
 }
 
-a {
-  padding: 3rem 3rem 0 3rem;
+.hidden {
+  display: none;
 }
 
 .header-right {
