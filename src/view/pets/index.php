@@ -9,17 +9,27 @@
     </div>
 </section>
 <section class="dashboard dashboard__home--content">
-    <div class="wrap">
-      <h3>pets</h3>
+<!-- Overview of Pets -->
+<div class="wrap">
+      <h3 class="section__title">Pets</h3>
       <a href="index.php?page=pets" class="viewall">View all</a>
     </div>
-    <div class="dashboard__home--pets">
-      <a href="" class="dashboard__item div1">Pushkin</a>
-      <a href="" class="dashboard__item div2">Oskaar</a>
-      <a href="" class="dashboard__item div3">Luna</a>
-      <a href="" class="dashboard__item div4">Wolf</a>
-      <a href="" class="dashboard__item div5">Paling</a>
-      <a href="" class="dashboard__item div6">Basiel</a>
+    <div class="list__home--pets">
+      <div class="list__wrapper">
+        <img src="" alt="">
+        <a href="" class="list__item">Pushkin</a>
+      </div>
+    </div>
+<!-- Overview of Events -->
+    <div class="wrap">
+      <h3 class="section__title">Events</h3>
+      <a href="index.php?page=events" class="viewall">View all</a>
+    </div>
+    <div class="list__home--events">
+      <div class="list__wrapper">
+        <img src="" alt="">
+        <a href="" class="list__item">Event 1</a>
+      </div>
     </div>
 </section>
 </div>
