@@ -12,8 +12,10 @@
     <header>
     <div class="centerd">
       <a class="center">Dashboard</a>
-      <a class="search">Search</a>
-      <a class="profile">Profile</a>
+      <div class="center__wrap">
+        <a class="search"><img src="/assets/images/magnifyingglass.png" width="35px" height="35px" alt="picture of magnifying glass"></a>
+        <a class="profile"><img src="/assets/images/profile.png" width="35px" height="35px" alt="profile"></a>
+      </div>
     </div>
   </header>
       <?php
@@ -27,15 +29,6 @@
 
 
   <!-- Content -->
-    <section class="dashboard">
-    <h2 class="hidden">Dashboard</h2>
-        <a href="index.php?page=pets" class="dashboard__item green">Pets</a>
-        <a href="index.php?page=addpet" class="dashboard__item red">addpet</a>
-        <a href="index.php?page=addevent" class="dashboard__item orange">addevent</a>
-        <a href="index.php?" class="dashboard__item yellow">Unassigned</a>
-        <a href="index.php?" class="dashboard__item blue">Unassigned</a>
-    </div>
-    </section>
     <section class="content">
         <?php echo $content;?>
     </section>
@@ -44,13 +37,13 @@
         <!-- Footer/Navigation -->
   <footer>
     <a href="index.php?page=index" class="active">
-      <img src="./assets/images/homeselected.svg" alt="home">
+      <img src="./assets/images/blackhomeselected.svg" alt="home">
     </a>
     <a href="index.php?page=pets">
-      <img src="./assets/images/pets.svg" alt="pets">
+      <img src="./assets/images/blackpets.svg" alt="pets">
     </a>
     <a href="index.php?page=events">
-      <img src="./assets/images/calendar.svg" alt="calendar">
+      <img src="./assets/images/blackcalendar.svg" alt="calendar">
     </a>
   </footer>
     <?php echo $js; ?>
