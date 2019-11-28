@@ -15,11 +15,17 @@
       <a href="index.php?page=pets" class="viewall">View all</a>
     </div>
     <div class="list__home--pets">
-      <div class="list__wrapper">
-        <img src="" alt="">
-        <a href="" class="list__item">Pushkin</a>
-      </div>
+    <?php if(!empty($pets)) : ?>
+      <?php foreach ($pets as $pet):?>
+            <div class="list__wrapper">
+              <img src="" alt="">
+              <a href=<?php echo "index.php?page=detail&id=" . $pet['id']; ?> class="list__item"><?php echo $pet['name']; ?></a>
+            </div>
+          <?php if  ($pet['id']=='6') break; ?>
+        <?php endforeach; ?>
+    <?php endif; ?>
     </div>
+
 <!-- Overview of Events -->
     <div class="wrap">
       <h3 class="section__title">Events</h3>

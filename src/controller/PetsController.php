@@ -12,7 +12,9 @@ class PetsController extends Controller {
   }
 
   public function index() {
+      $pets = $this->petDAO->selectAll();
       $this->set('title', 'Home');
+      $this->set('pets', $pets);
       $this->set('currentPage', 'index');
     }
 
