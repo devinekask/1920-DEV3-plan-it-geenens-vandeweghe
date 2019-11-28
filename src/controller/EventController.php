@@ -16,6 +16,8 @@ class TodosController extends Controller {
       if ($_POST['action'] == 'insertTodo') {
         $this->handleInsertTodo();
       }
+      $events = $this->eventDAO->selectAll();
+      $this->set('events', $events);
     }
 
     $todos = $this->todoDAO->selectAll();

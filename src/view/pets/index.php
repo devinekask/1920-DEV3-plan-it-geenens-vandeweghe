@@ -32,10 +32,15 @@
       <a href="index.php?page=events" class="viewall">View all</a>
     </div>
     <div class="list__home--events">
-      <div class="list__wrapper">
-        <img src="" alt="">
-        <a href="" class="list__item">Event 1</a>
-      </div>
+    <?php if(!empty($events)) : ?>
+      <?php foreach ($events as $event):?>
+            <div class="list__wrapper">
+              <img src="" alt="">
+              <a href=<?php echo "index.php?page=detail&id=" . $event['id']; ?> class="list__item"><?php echo $event['name']; ?></a>
+            </div>
+          <?php if  ($event['id']=='6') break; ?>
+        <?php endforeach; ?>
+    <?php endif; ?>
     </div>
 </section>
 </div>

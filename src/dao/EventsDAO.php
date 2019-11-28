@@ -2,17 +2,17 @@
 
 require_once( __DIR__ . '/DAO.php');
 
-class TodoDAO extends DAO {
+class EventDAO extends DAO {
 
   public function selectAll(){
-    $sql = "SELECT * FROM `todos`";
+    $sql = "SELECT * FROM `petevents`";
     $stmt = $this->pdo->prepare($sql);
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
 
   public function selectById($id){
-    $sql = "SELECT * FROM `todos` WHERE `id` = :id";
+    $sql = "SELECT * FROM `petevents` WHERE `id` = :id";
     $stmt = $this->pdo->prepare($sql);
     $stmt->bindValue(':id', $id);
     $stmt->execute();
@@ -20,7 +20,7 @@ class TodoDAO extends DAO {
   }
 
   public function delete($id){
-    $sql = "DELETE FROM `todos` WHERE `id` = :id";
+    $sql = "DELETE FROM `petevents` WHERE `id` = :id";
     $stmt = $this->pdo->prepare($sql);
     $stmt->bindValue(':id', $id);
     return $stmt->execute();
@@ -29,12 +29,15 @@ class TodoDAO extends DAO {
   public function insert($data) {
     $errors = $this->validate( $data );
     if (empty($errors)) {
-      $sql = "INSERT INTO `todos` (`created`, `modified`, `checked`, `text`) VALUES (:created, :modified, :checked, :text)";
+      $sql = "INSERT INTO `petevents` (`id`, `name`, `description`, `petid`, `date`, `time`, `type`) VALUES (:id, :name, :description, :petid), :date, :time, :type";
       $stmt = $this->pdo->prepare($sql);
-      $stmt->bindValue(':created', $data['created']);
-      $stmt->bindValue(':modified', $data['modified']);
-      $stmt->bindValue(':checked', $data['checked']);
-      $stmt->bindValue(':text', $data['text']);
+      $stmt->bindValue(':id', $data['id']);
+      $stmt->bindValue(':name', $data['name']);
+      $stmt->bindValue(':description', $data['description']);
+      $stmt->bindValue(':petid', $data['petid']);
+      $stmt->bindValue(':date', $data['date']);
+      $stmt->bindValue(':time', $data['time']);
+      $stmt->bindValue(':type', $data['type']);
       if ($stmt->execute()) {
         return $this->selectById($this->pdo->lastInsertId());
       }
