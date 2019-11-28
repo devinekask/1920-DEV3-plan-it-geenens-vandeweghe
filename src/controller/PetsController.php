@@ -25,4 +25,14 @@ class PetsController extends Controller {
 
       $this->set('title', 'Events');
     }
+
+    public function addpet(){
+
+    if(!empty($_POST['action'])){
+      if($_POST['action'] == 'insertPet'){
+        $insertedPet = $this->petDAO->insertPet($_POST);
+      }
+    }
+
+    }
 }

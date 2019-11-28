@@ -27,17 +27,18 @@
 
 
   <!-- Content -->
-<section class="players">
+    <section class="dashboard">
     <h2 class="hidden">Dashboard</h2>
-      <div class="dashboard">
-        <a href="index.php?page=pets" class="dashboard__item green">Paw</a>
-        <a href="index.php?" class="dashboard__item red">Unassigned</a>
-        <a href="index.php?" class="dashboard__item orange">Unassigned</a>
+        <a href="index.php?page=pets" class="dashboard__item green">Pets</a>
+        <a href="index.php?page=addpet" class="dashboard__item red">addpet</a>
+        <a href="index.php?page=addevent" class="dashboard__item orange">addevent</a>
         <a href="index.php?" class="dashboard__item yellow">Unassigned</a>
         <a href="index.php?" class="dashboard__item blue">Unassigned</a>
     </div>
+    </section>
+    <section class="content">
         <?php echo $content;?>
-        </section>
+    </section>
 
 
         <!-- Footer/Navigation -->

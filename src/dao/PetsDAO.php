@@ -26,35 +26,27 @@ class PetsDAO extends DAO {
     return $stmt->execute();
   }
 
-  public function insert($data) {
+  public function insertPet($data) {
     $errors = $this->validate( $data );
     if (empty($errors)) {
-      $sql = "INSERT INTO `pets` (`created`, `modified`, `checked`, `text`) VALUES (:created, :modified, :checked, :text)";
+      $sql = "INSERT INTO `pets` (`id`, `name`, `gender`, `type`, `birthday`, `owner`, `chipid`) VALUES (NULL, :name, :gender, :kind, :birthd, :owner, :chipid);";
       $stmt = $this->pdo->prepare($sql);
-      $stmt->bindValue(':created', $data['created']);
-      $stmt->bindValue(':modified', $data['modified']);
-      $stmt->bindValue(':checked', $data['checked']);
-      $stmt->bindValue(':text', $data['text']);
-      if ($stmt->execute()) {
-        return $this->selectById($this->pdo->lastInsertId());
-      }
+      $stmt->bindValue(':name', $data['name']);
+      $stmt->bindValue(':gender', $data['gender']);
+      $stmt->bindValue(':kind', $data['kind']);
+      $stmt->bindValue(':birthd', $data['birthd']);
+      $stmt->bindValue(':owner', $data['owner']);
+      $stmt->bindValue(':chipid', $data['chipid']);
+      $stmt->execute();
+      return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     return false;
   }
 
   public function validate( $data ){
     $errors = [];
-    if (!isset($data['created'])) {
-      $errors['created'] = 'Gelieve created in te vullen';
-    }
-    if (!isset($data['modified'])) {
-      $errors['modified'] = 'Gelieve modified in te vullen';
-    }
-    if (!isset($data['checked'])) {
-      $errors['checked'] = 'Gelieve checked in te vullen';
-    }
-    if (empty($data['text']) ){
-      $errors['text'] = 'Gelieve een text in te vullen';
+    if (!isset($data['name'])) {
+      $errors['name'] = 'Gelieve name in te vullen';
     }
     return $errors;
   }
