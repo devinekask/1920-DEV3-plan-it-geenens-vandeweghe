@@ -2,19 +2,25 @@
 
 require_once __DIR__ . '/Controller.php';
 require_once __DIR__ . '/../dao/PetsDAO.php';
+require_once __DIR__ . '/../dao/EventsDAO.php';
 
 class PetsController extends Controller {
 
   private $petDAO;
+  private $eventsDAO;
 
   function __construct() {
     $this->petDAO = new PetsDAO();
+    $this->eventsDAO = new EventsDAO();
   }
 
   public function index() {
-      $pets = $this->petDAO->selectAll();
+    $pets = $this->petDAO->selectAll();
+    $events = $this->eventsDAO->selectAll();
+
       $this->set('title', 'Home');
       $this->set('pets', $pets);
+      $this->set('events', $events);
       $this->set('currentPage', 'index');
     }
 
@@ -25,14 +31,16 @@ class PetsController extends Controller {
       $this->set('currentPage', 'pets');
     }
 
-    public function detail(){
-      $this->set('title', 'Detail');
-      $this->set('currentPage', 'detail');
+  public function events() {
+      $events = $this->eventsDAO->selectAll();
+      $this->set('title', 'Events');
+      $this->set('events', $events);
+      $this->set('currentPage', 'events');
     }
 
-  public function events() {
-
-      $this->set('title', 'Events');
+    public function petdetail(){
+      $this->set('title', 'Detail');
+      $this->set('currentPage', 'detail');
     }
 
     public function addpet(){

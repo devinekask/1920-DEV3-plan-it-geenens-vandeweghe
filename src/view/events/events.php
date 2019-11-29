@@ -9,11 +9,11 @@
 
 <section class="dashboard dashboard__pets--content">
     <div class="list__pets--pets">
-<?php if(!empty($pets)) : ?>
-      <?php foreach ($pets as $pet):?>
+<?php if(!empty($events)) : ?>
+      <?php foreach ($events as $event):?>
             <div class="list__wrapper">
               <img src="" alt="">
-              <a href=<?php echo "index.php?page=petdetail&id=" . $pet['id']; ?> class="list__item"><?php echo $pet['name']; ?></a>
+              <a href=<?php echo "index.php?page=eventdetail&id=" . $event['id']; ?> class="list__item"><?php echo $event['name']; ?></a>
             </div>
         <?php endforeach; ?>
     <?php endif; ?>

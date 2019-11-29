@@ -19,7 +19,7 @@
       <?php foreach ($pets as $pet):?>
             <div class="list__wrapper">
               <img src="" alt="">
-              <a href=<?php echo "index.php?page=detail&id=" . $pet['id']; ?> class="list__item"><?php echo $pet['name']; ?></a>
+              <a href=<?php echo "index.php?page=petdetail&id=" . $pet['id']; ?> class="list__item"><?php echo $pet['name']; ?></a>
             </div>
           <?php if  ($pet['id']=='6') break; ?>
         <?php endforeach; ?>
@@ -36,7 +36,7 @@
       <?php foreach ($events as $event):?>
             <div class="list__wrapper">
               <img src="" alt="">
-              <a href=<?php echo "index.php?page=detail&id=" . $event['id']; ?> class="list__item"><?php echo $event['name']; ?></a>
+              <a href=<?php echo "index.php?page=eventdetail&id=" . $event['id']; ?> class="list__item"><?php echo $event['name']; ?></a>
             </div>
           <?php if  ($event['id']=='6') break; ?>
         <?php endforeach; ?>

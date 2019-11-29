@@ -25,6 +25,7 @@ class EventsDAO extends DAO {
     $stmt->bindValue(':id', $id);
     return $stmt->execute();
   }
+  
 
   public function insert($data) {
     $errors = $this->validate( $data );
