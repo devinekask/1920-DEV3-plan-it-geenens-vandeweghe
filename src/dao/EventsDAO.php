@@ -2,7 +2,7 @@
 
 require_once( __DIR__ . '/DAO.php');
 
-class EventDAO extends DAO {
+class EventsDAO extends DAO {
 
   public function selectAll(){
     $sql = "SELECT * FROM `petevents`";
