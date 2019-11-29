@@ -4,8 +4,10 @@ footer {
   background-color: white;
 }
 
+
+
 header {
-  padding: var(--marginMedium);
+  padding: var(--marginSmall);
   height: 50px;
   font-size: var(--fontsizeMega);
 }
@@ -21,6 +23,10 @@ footer {
   padding: 2rem 0;
 }
 
+p {
+  padding-left: var(--marginSmall);
+}
+
 .hidden {
   display: none;
 }
@@ -29,9 +35,10 @@ footer {
   display: flex;
 }
 
-.dashboard__home--content .wrap {
+.dashboard__home--content,
+.dashboard__pets--content,
+.wrap {
   justify-content: space-between;
-
 }
 
 .center {
@@ -58,14 +65,17 @@ footer {
 }
 
 .dashboard {
-  padding: var(--marginMedium);
+  padding: var(--marginSmall);
 }
 
 .section__title {
   font-size: var(--fontsizeBig);
 }
 
-.dashboard__home--header, .list__home--pets, .dashboard__home--pets {
+.dashboard__home--header,
+.list__home--pets,
+.list__pets--pets,
+.dashboard__home--pets {
   color: white;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -75,37 +85,72 @@ footer {
   margin: 0 auto;
 }
 
-.green {
+.dashboard__home--green {
   grid-area: span 2;
   background-color: #61cb96;
   height: 105px;
   border-radius: 4px;
-
 }
 
-.red {
+.dashboard__home--red {
   grid-area: 1 / 2 span 2;
   background-color: #ed7a84;
 }
 
-.orange {
+.dashboard__home--orange {
   grid-area: 2 / 2 / span 2;
   background-color: #ed8052;
 }
 
-.yellow {
+.dashboard__home--yellow {
   grid-area: 1 / 3 / 2 / 3;
   background-color: #f7c75f;
 }
 
-.blue {
+.dashboard__home--blue {
   grid-area: 2 / 3 / 2 / 4;
   background-color: #70cbd3;
 }
 
-.red, .orange, .yellow, .blue {
+.dashboard__home--red,
+.dashboard__home--orange,
+.dashboard__home--yellow,
+.dashboard__home--blue {
   height: 4.8rem;
   border-radius: .4rem;
+}
+
+.dashboard__pets--header,
+.dashboard__pets--pets {
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  row-gap: var(--marginSmall);
+  column-gap: var(--marginSmall);
+  text-align: center;
+  margin: 0 auto;
+}
+
+.dashbboard__pets--green {
+  grid-area: 1 / 1 / 2 / 3;
+  background-color: #61cb96;
+}
+
+.dashboard__pets--red {
+  grid-area: 1 / 3 / 2 / 5;
+  background-color: #ed7a84;
+}
+
+.dashboard__pets--yellow {
+  grid-area: 1 / 5 / 2 / 7;
+  background-color: #f7c75f;
+}
+
+.dashboard__pets--yellow,
+.dashboard__pets--red,
+.dashbboard__pets--green {
+  height: 52.5px;
+  border-radius: 4px;
 }
 
 .right {
@@ -118,12 +163,12 @@ footer {
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  color: black;
+  color: var(--atextColor);
 }
 
 .list__wrapper {
   height: 12rem;
-  color: black;
+  background-color: black;
 }
 
 .pets {

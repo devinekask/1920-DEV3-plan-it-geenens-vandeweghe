@@ -1,15 +1,15 @@
-<div>
 <section class="dashboard dashboard__home--header">
     <h2 class="hidden">Dashboard</h2>
-        <a href="index.php?page=pets" class="dashboard__item green">Pets</a>
-        <a href="index.php?page=addpet" class="dashboard__item red">addpet</a>
-        <a href="index.php?page=addevent" class="dashboard__item orange">addevent</a>
-        <a href="index.php?" class="dashboard__item yellow">Unassigned</a>
-        <a href="index.php?" class="dashboard__item blue">Unassigned</a>
-    </div>
+        <a href="index.php?page=pets" class="dashboard__item dashboard__home--green">Pets</a>
+        <a href="index.php?page=addpet" class="dashboard__item dashboard__home--red">addpet</a>
+        <a href="index.php?page=addevent" class="dashboard__item dashboard__home--orange">addevent</a>
+        <a href="index.php?" class="dashboard__item dashboard__home--yellow">Unassigned</a>
+        <a href="index.php?" class="dashboard__item dashboard__home--blue">Unassigned</a>
 </section>
-<section class="dashboard dashboard__home--content">
+
+
 <!-- Overview of Pets -->
+<section class="dashboard dashboard__home--content">
 <div class="wrap">
       <h3 class="section__title">Pets</h3>
       <a href="index.php?page=pets" class="viewall">View all</a>

@@ -29,7 +29,7 @@ class EventDAO extends DAO {
   public function insert($data) {
     $errors = $this->validate( $data );
     if (empty($errors)) {
-      $sql = "INSERT INTO `petevents` (`id`, `name`, `description`, `petid`, `date`, `time`, `type`) VALUES (:id, :name, :description, :petid), :date, :time, :type";
+      $sql = "INSERT INTO `petevents` (`id`, `name`, `description`, `petid`, `date`, `time`, `type`) VALUES (NULL, :name, :description, :petid), :date, :time, :type";
       $stmt = $this->pdo->prepare($sql);
       $stmt->bindValue(':id', $data['id']);
       $stmt->bindValue(':name', $data['name']);
@@ -38,26 +38,28 @@ class EventDAO extends DAO {
       $stmt->bindValue(':date', $data['date']);
       $stmt->bindValue(':time', $data['time']);
       $stmt->bindValue(':type', $data['type']);
-      if ($stmt->execute()) {
-        return $this->selectById($this->pdo->lastInsertId());
-      }
+      $stmt->execute();
+      return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     return false;
   }
 
   public function validate( $data ){
     $errors = [];
-    if (!isset($data['created'])) {
-      $errors['created'] = 'Gelieve created in te vullen';
+    if (!isset($data['name'])) {
+      $errors['name'] = 'Gelieve het onderwerp in te vullen';
     }
-    if (!isset($data['modified'])) {
-      $errors['modified'] = 'Gelieve modified in te vullen';
+    if (!isset($data['description'])) {
+      $errors['description'] = 'Gelieve beschrijving in te vullen';
     }
-    if (!isset($data['checked'])) {
-      $errors['checked'] = 'Gelieve checked in te vullen';
+    if (empty($data['date']) ){
+      $errors['date'] = 'Gelieve een datum in te vullen';
     }
-    if (empty($data['text']) ){
-      $errors['text'] = 'Gelieve een text in te vullen';
+    if (!isset($data['time'])) {
+      $errors['time'] = 'Gelieve tijdstip in te vullen';
+    }
+    if (empty($data['type']) ){
+      $errors['type'] = 'Gelieve een type te selecteren';
     }
     return $errors;
   }

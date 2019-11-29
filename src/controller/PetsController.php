@@ -19,8 +19,15 @@ class PetsController extends Controller {
     }
 
   public function pets() {
-
+      $pets = $this->petDAO->selectAll();
       $this->set('title', 'Pets');
+      $this->set('pets', $pets);
+      $this->set('currentPage', 'pets');
+    }
+
+    public function detail(){
+      $this->set('title', 'Detail');
+      $this->set('currentPage', 'detail');
     }
 
   public function events() {
