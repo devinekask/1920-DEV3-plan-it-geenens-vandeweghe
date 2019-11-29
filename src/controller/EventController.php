@@ -1,32 +1,30 @@
 <?php
 
 require_once __DIR__ . '/Controller.php';
-require_once __DIR__ . '/../dao/TodoDAO.php';
+require_once __DIR__ . '/../dao/EventsDAO.php';
 
-class TodosController extends Controller {
+class EventsController extends Controller {
 
-  private $todoDAO;
+  private $eventDAO;
 
   function __construct() {
-    $this->todoDAO = new TodoDAO();
+    $this->eventDAO = new EventsDAO();
   }
 
   public function index() {
     if (!empty($_POST['action'])) {
-      if ($_POST['action'] == 'insertTodo') {
+      if ($_POST['action'] == 'insertEvent') {
         $this->handleInsertTodo();
       }
-      $events = $this->eventDAO->selectAll();
-      $this->set('events', $events);
     }
 
-    $todos = $this->todoDAO->selectAll();
-    $this->set('todos', $todos);
-    $this->set('title', 'Overview');
+    $events = $this->eventDAO->selectAll();
+    $this->set('events', $events);
+    $this->set('title', 'Home');
 
     if (strtolower($_SERVER['HTTP_ACCEPT']) == 'application/json') {
       header('Content-Type: application/json');
-      echo json_encode($todos);
+      echo json_encode($events);
       exit();
     }
   }
@@ -37,6 +35,7 @@ class TodosController extends Controller {
       'modified' => date('Y-m-d H:i:s'),
       'checked' => 0,
       'text' => $_POST['text']
+      // Help!
     );
     $insertTodoResult = $this->todoDAO->insert($data);
     if (!$insertTodoResult) {
