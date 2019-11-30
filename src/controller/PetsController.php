@@ -39,8 +39,20 @@ class PetsController extends Controller {
     }
 
     public function petdetail(){
+      if(!empty($_GET['id'])){
+        $pet = $this->petDAO->selectById($_GET['id']);
+      }
+  //error als er geen afl gevonden werd
+      if(empty($pet)){
+        $_SESSION['error'] = 'De aflevering werd niet gevonden';
+        header('Location:index.php');
+        exit();
+      }
+
       $this->set('title', 'Detail');
+      $this->set('pet', $pet);
       $this->set('currentPage', 'detail');
+
     }
 
     public function addpet(){

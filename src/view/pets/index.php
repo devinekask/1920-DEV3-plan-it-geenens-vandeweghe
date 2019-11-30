@@ -1,10 +1,10 @@
 <section class="dashboard dashboard__home--header">
     <h2 class="hidden">Dashboard</h2>
         <a href="index.php?page=pets" class="dashboard__item dashboard__home--green">Pets</a>
-        <a href="index.php?page=addpet" class="dashboard__item dashboard__home--red">addpet</a>
-        <a href="index.php?page=addevent" class="dashboard__item dashboard__home--orange">addevent</a>
-        <a href="index.php?" class="dashboard__item dashboard__home--yellow">Unassigned</a>
-        <a href="index.php?" class="dashboard__item dashboard__home--blue">Unassigned</a>
+        <a href="index.php?page=addpet" class="dashboard__item dashboard__home--red">Events</a>
+        <a href="index.php?page=addevent" class="dashboard__item dashboard__home--orange">x</a>
+        <a href="index.php?" class="dashboard__item dashboard__home--yellow">Add a pet</a>
+        <a href="index.php?" class="dashboard__item dashboard__home--purple">Add an event</a>
 </section>
 
 
