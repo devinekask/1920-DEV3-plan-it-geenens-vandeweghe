@@ -35,6 +35,7 @@ p {
 
 .dashboard__home--content,
 .dashboard__pets--content,
+.dashboard__events--content,
 .wrap {
   justify-content: space-between;
 }
@@ -77,6 +78,7 @@ p {
 .dashboard__home--header,
 .list__home--pets,
 .list__pets--pets,
+.list__events--events,
 .dashboard__home--pets {
   color: white;
   display: grid;
@@ -153,6 +155,48 @@ p {
 .dashbboard__pets--green {
   height: 52.5px;
   border-radius: 4px;
+}
+
+.dashboard__events--header,
+.dashboard__events--events {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  row-gap: var(--marginSmall);
+  column-gap: var(--marginSmall);
+  text-align: center;
+  margin: 0 auto;
+}
+
+.dashboard__events--green {
+  grid-area: 1 / 1 / 2 / 2;
+  background-color: #61cb96;
+}
+
+.dashboard__events--blue {
+  grid-area: 2 / 1 / 3 / 2;
+  background-color: #70cbd3;
+
+}
+
+.dashboard__events--red {
+  grid-area: 1 / 2 / 2 / 3;
+  background-color: #ed7a84;
+}
+
+.dashboard__events--yellow {
+  grid-area: 2 / 2 / 3 / 3;
+  background-color: #f7c75f;
+}
+
+.dashboard__events--orange {
+  grid-area: 1 / 3 / 2 / 4;
+  background-color: #ed8052;
+}
+
+.dashboard__events--purple {
+  grid-area: 2 / 3 / 3 / 4;
+  background-color: #dbb2ff;
 }
 
 .right {

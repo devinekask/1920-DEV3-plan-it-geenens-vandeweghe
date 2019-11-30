@@ -15,14 +15,14 @@ class PetsController extends Controller {
   }
 
   public function index() {
-    $pets = $this->petDAO->selectAll();
-    $events = $this->eventsDAO->selectAll();
-
+      $pets = $this->petDAO->selectAll();
+      $events = $this->eventsDAO->selectAll();
       $this->set('title', 'Home');
       $this->set('pets', $pets);
       $this->set('events', $events);
       $this->set('currentPage', 'index');
     }
+
 
   public function pets() {
       $pets = $this->petDAO->selectAll();

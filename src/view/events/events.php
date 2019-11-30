@@ -1,19 +1,22 @@
-<p>Order pets by</p>
-<section class="dashboard dashboard__pets--header">
+<p>Order events by</p>
+<section class="dashboard dashboard__events--header">
     <h2 class="hidden">Dashboard</h2>
-        <a href="index.php?page=pets" class="dashboard__item dashbboard__pets--green">Gender</a>
-        <a href="index.php?page=addpet" class="dashboard__item dashboard__pets--red">Age</a>
-        <a href="index.php?" class="dashboard__item dashboard__pets--yellow">Type</a>
+        <a href="index.php?page=" class="dashboard__item dashboard__events--green">This week</a>
+        <a href="index.php?page=" class="dashboard__item dashboard__events--blue">🍼</a>
+        <a href="index.php?page=" class="dashboard__item dashboard__events--yellow">💊</a>
+        <a href="index.php?page=" class="dashboard__item dashboard__events--red">This month</a>
+        <a href="index.php?page=" class="dashboard__item dashboard__events--orange">All events</a>
+        <a href="index.php?page=" class="dashboard__item dashboard__events--purple">💉</a>
 </section>
 
 
-<section class="dashboard dashboard__pets--content">
-    <div class="list__pets--pets">
+<section class="dashboard dashboard__events--content">
+    <div class="list__events--events">
 <?php if(!empty($events)) : ?>
       <?php foreach ($events as $event):?>
             <div class="list__wrapper">
               <img src="" alt="">
-              <a href=<?php echo "index.php?page=eventdetail&id=" . $event['id']; ?> class="list__item"><?php echo $event['name']; ?></a>
+              <a href=<?php echo "index.php?page=eventdetail&id=" . $event['eventid']; ?> class="list__item"><?php echo $event['eventname']; ?></a>
             </div>
         <?php endforeach; ?>
     <?php endif; ?>
