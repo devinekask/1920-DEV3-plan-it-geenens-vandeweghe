@@ -322,6 +322,7 @@ p {
 
 .petdetail__info {
   /* grid-area: info; */
+  width: 100%;
 }
 
 .petdetail__info div {

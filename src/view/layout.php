@@ -11,7 +11,7 @@
     <!-- Header -->
     <header>
     <div class="centerd">
-      <h1 class="center">Dashboard</h1>
+      <h1 class="center"><?php echo $title?></h1>
       <div class="center__wrap">
         <a class="search"><img src="/assets/images/magnifyingglass.png" width="35px" height="35px" alt="picture of magnifying glass"></a>
         <a class="profile"><img src="/assets/images/profile.png" width="35px" height="35px" alt="profile"></a>
