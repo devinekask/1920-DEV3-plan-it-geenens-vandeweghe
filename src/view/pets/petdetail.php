@@ -63,4 +63,23 @@
     </div>
   </div>
   <h3 class="subtitle--petdetailevents">Upcomming events for <?php echo $pet['name'] ?></h3>
+  <?php if(!empty($events)) : ?>
+      <?php foreach ($events as $event):?>
+        <a href=<?php echo "index.php?page=eventdetail&id=" . $event['id']; ?> class="link__wrapper link__wrapper--events">
+          <div class="home-events-image">
+            <img src="./assets/images/magnifyingglass.png" width="50px" height="50px" alt="">
+          </div>
+          <div class="home-events-info">
+            <span><?php echo $pet['name']; ?></span> <!-- naam uit pets binnenhalen -->
+            <span><?php echo $event['name']; ?></span>
+            <span><?php echo $time = date('H:ia',strtotime($event['date']));?></span>
+            <span><?php echo $date = date('dS M Y ',strtotime($event['date']));?></span>
+          </div>
+
+          <div class="home-events-reminder">
+            <img src="./assets/images/magnifyingglass.png" width="25px" height="25px" alt="">
+          </div>
+        </a>
+        <?php endforeach; ?>
+    <?php endif; ?>
 </section>

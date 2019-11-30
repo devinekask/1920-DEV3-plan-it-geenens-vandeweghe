@@ -41,16 +41,18 @@ class PetsController extends Controller {
     public function petdetail(){
       if(!empty($_GET['id'])){
         $pet = $this->petDAO->selectById($_GET['id']);
+        $events = $this->eventsDAO->selectByPetId($_GET['id']);
       }
   //error als er geen afl gevonden werd
       if(empty($pet)){
-        $_SESSION['error'] = 'De aflevering werd niet gevonden';
+        $_SESSION['error'] = 'The pet you were looking for is no where to be found';
         header('Location:index.php');
         exit();
       }
 
       $this->set('title', 'Detail');
       $this->set('pet', $pet);
+      $this->set('events', $events);
       $this->set('currentPage', 'detail');
 
     }

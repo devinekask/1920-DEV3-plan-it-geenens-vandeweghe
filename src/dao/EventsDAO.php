@@ -21,6 +21,14 @@ class EventsDAO extends DAO {
     return $stmt->fetch(PDO::FETCH_ASSOC);
   }
 
+  public function selectByPetId($petId){
+    $sql = "SELECT * FROM `petevents` WHERE `petid` = :id";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->bindValue(':id', $petId);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
+
   public function delete($id){
     $sql = "DELETE FROM `petevents` WHERE `id` = :id";
     $stmt = $this->pdo->prepare($sql);
