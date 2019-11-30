@@ -29,6 +29,17 @@ p {
   display: none;
 }
 
+.subtitle {
+  font-size: var(--fontsizeBig);
+}
+
+.subtitle--petdetail {
+  background-color: #61cb96;
+  color: white;
+  padding: var(--marginSmall);
+  border-radius: 4px;
+}
+
 .wrap {
   display: flex;
 }
@@ -260,4 +271,68 @@ p {
 
 .viewall {
   color: #61cb96;
+}
+
+.detail-label {
+  font-size: var(--fontsizeMedium);
+  opacity: .6;
+  padding-bottom: .2rem;
+  border-bottom: #61cb96 .1rem solid;
+  border-radius: 0 0 4px;
+}
+
+.detail-field {
+  font-size: var(--fontsizeBig);
+  width: 100%;
+  padding: 1rem 0 .2rem 1rem;
+}
+
+.petdetail {
+  /* display: grid;
+  grid-template-columns: 50% auto;
+  grid-template-areas:
+    'subtitle-info subtitle-info'
+    'image info'
+    'subtitle-events subtitle-events'
+    'events events'; */
+  color: #61cb96;
+}
+
+.petinfo-wrapper {
+  display: flex;
+
+}
+
+.subtitle--petdetailinfo {
+  /* grid-area: subtitle-info; */
+}
+
+.subtitle--petdetailevents {
+  /* grid-area: subtitle-events; */
+}
+
+.subtitle--petdetailevents, .subtitle--petdetailinfo {
+  color: gray;
+}
+
+.petdetail__image {
+  width: 50%;
+  /* grid-area: image; */
+}
+
+.petdetail__info {
+  /* grid-area: info; */
+}
+
+.petdetail__info div {
+  display: flex;
+  flex-flow: column;
+  margin-bottom: var(--marginMedium);
+}
+
+@media only screen and (max-width: 400px) {
+
+  .petinfo-wrapper {
+    flex-flow: column;
+  }
 }
