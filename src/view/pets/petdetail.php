@@ -70,10 +70,10 @@
             <img src="./assets/images/magnifyingglass.png" width="50px" height="50px" alt="">
           </div>
           <div class="home-events-info">
-            <span><?php echo $pet['name']; ?></span> <!-- naam uit pets binnenhalen -->
-            <span><?php echo $event['name']; ?></span>
-            <span><?php echo $time = date('H:ia',strtotime($event['date']));?></span>
-            <span><?php echo $date = date('dS M Y ',strtotime($event['date']));?></span>
+            <span class="link__wrapper--name"><?php echo $pet['name']; ?></span> <!-- naam uit pets binnenhalen -->
+            <span class="link__wrapper--text"><?php echo $event['name']; ?></span>
+            <span class="link__wrapper--text"><?php echo $time = date('H:ia',strtotime($event['date']));?></span>
+            <span class="link__wrapper--text"><?php echo $date = date('dS M Y ',strtotime($event['date']));?></span>
           </div>
 
           <div class="home-events-reminder">
