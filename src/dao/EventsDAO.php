@@ -29,6 +29,14 @@ class EventsDAO extends DAO {
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
 
+  public function updatePetById($ventid){
+    $sql = "UPDATE `petevents` SET `name` = :name , `description` = :desc, `petid` = :petid, `date` = :date, `location` = :location WHERE `petevents`.`id` = :id;";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->bindValue(':id', $eventid);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
+
   public function delete($id){
     $sql = "DELETE FROM `petevents` WHERE `id` = :id";
     $stmt = $this->pdo->prepare($sql);

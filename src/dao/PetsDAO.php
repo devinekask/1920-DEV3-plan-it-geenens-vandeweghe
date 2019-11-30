@@ -26,6 +26,14 @@ class PetsDAO extends DAO {
     return $stmt->execute();
   }
 
+  public function updatePetById($petId){
+    $sql = "UPDATE `pets` SET `name` = :name, `gender` = :gender, `type` = :type, `birthday` = :bday, `owner` = :owner, `chipid` = :chip WHERE `pets`.`id` = :petid";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->bindValue(':petid', $petId);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
+
   public function insertPet($data) {
     $errors = $this->validate( $data );
     if (empty($errors)) {
