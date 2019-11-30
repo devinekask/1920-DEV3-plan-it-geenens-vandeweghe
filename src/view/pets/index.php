@@ -10,37 +10,46 @@
 
 <!-- Overview of Pets -->
 <section class="dashboard dashboard__home--content">
-<div class="wrap">
-      <h3 class="section__title">Pets</h3>
-      <a href="index.php?page=pets" class="viewall">View all</a>
-    </div>
-    <div class="list__home--pets">
+  <div class="wrap">
+        <h3 class="section__title">Pets</h3>
+        <a href="index.php?page=pets" class="viewall">View all</a>
+  </div>
+  <div class="list__home--pets">
     <?php if(!empty($pets)) : ?>
       <?php foreach ($pets as $pet):?>
-            <div class="list__wrapper">
-              <img src="" alt="">
-              <a href=<?php echo "index.php?page=petdetail&id=" . $pet['id']; ?> class="list__item"><?php echo $pet['name']; ?></a>
-            </div>
-          <?php if  ($pet['id']=='6') break; ?>
-        <?php endforeach; ?>
+        <a href=<?php echo "index.php?page=petdetail&id=" . $pet['id']; ?> class="link__wrapper">
+          <img <?php echo "src=\"./assets/images/pettype" . $pet['type'] . ".jpg\""; ?> width= "100px" height="100px" alt="">
+          <?php echo $pet['name']; ?>
+        </a>
+        <?php if  ($pet['id']=='6') break; ?>
+      <?php endforeach; ?>
     <?php endif; ?>
-    </div>
+  </div>
 
 <!-- Overview of Events -->
-    <div class="wrap">
+  <div class="wrap">
       <h3 class="section__title">Events</h3>
       <a href="index.php?page=events" class="viewall">View all</a>
-    </div>
-    <div class="list__home--events">
+  </div>
+  <div class="list__home--events">
     <?php if(!empty($events)) : ?>
       <?php foreach ($events as $event):?>
-            <div class="list__wrapper">
-              <img src="" alt="">
-              <a href=<?php echo "index.php?page=eventdetail&id=" . $event['id']; ?> class="list__item"><?php echo $event['name']; ?></a>
-            </div>
+        <a href="" class="link__wrapper link__wrapper--events">
+          <div class="home-events-image">
+            <img src="./assets/images/magnifyingglass.png" width="50px" height="50px" alt="">
+          </div>
+          <div class="home-events-info">
+            <span><?php echo $pet['name']; ?></span>
+            <span>Take to vet</span>
+            <span>16h Monday</span>
+            <span>18th of November 2019</span>
+          </div>
+          <div class="home-events-reminder">
+            <img src="./assets/images/magnifyingglass.png" width="25px" height="25px" alt="">
+          </div>
+        </a>
           <?php if  ($event['id']=='6') break; ?>
         <?php endforeach; ?>
     <?php endif; ?>
-    </div>
+  </div>
 </section>
-</div>

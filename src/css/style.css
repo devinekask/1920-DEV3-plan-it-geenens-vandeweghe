@@ -39,6 +39,10 @@ p {
   justify-content: space-between;
 }
 
+.dashboard__home--content .wrap {
+  margin-top: var(--marginMedium);
+}
+
 .center {
   text-align: center;
 }
@@ -156,17 +160,49 @@ p {
   color: #61cb96;
 }
 
+.link__wrapper {
+  background-color: #61cb96;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  padding: var(--marginSmall);
+  border-radius: 4px;
+}
+
+.dashboard__item {
+  color: white;
+}
+
+.list__item {
+  color: black;
+}
+
 .list__item, .dashboard__item {
   display: flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  color: var(--atextColor);
 }
 
-.list__wrapper {
-  height: 12rem;
-  background-color: black;
+.link__wrapper--events {
+  display: grid;
+  grid-template-columns: 2fr 6fr 2fr;
+}
+
+.home-events-image {
+  width: 100%;
+}
+
+.home-events-info {
+  font-size: var(--fontsizeMini);
+  display: flex;
+  flex-flow: column;
+}
+
+.home-events-info:nth-child(1) {
+  font-size: 3rem;
 }
 
 .pets {

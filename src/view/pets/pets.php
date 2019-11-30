@@ -12,7 +12,7 @@
 <?php if(!empty($pets)) : ?>
       <?php foreach ($pets as $pet):?>
             <div class="list__wrapper">
-              <img src="" alt="">
+              <img <?php echo `src="pettype` . $pet['type'] . `"`; ?> width= "100px" height="100px" alt="">
               <a href=<?php echo "index.php?page=petdetail&id=" . $pet['id']; ?> class="list__item"><?php echo $pet['name']; ?></a>
             </div>
         <?php endforeach; ?>
