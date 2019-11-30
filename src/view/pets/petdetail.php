@@ -53,7 +53,7 @@
 
       <div>
         <span class="detail-label">Birthday</span>
-        <span class="detail-field"><?php echo $pet['birthday'] ?></span>
+        <span class="detail-field"><?php echo $bday = date('dS F Y', strtotime($pet['birthday'])) ?></span>
       </div>
 
       <div>
