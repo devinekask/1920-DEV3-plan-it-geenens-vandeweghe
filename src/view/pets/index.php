@@ -11,32 +11,34 @@
 
   <!-- Overview of Pets -->
   <section class="dashboard dashboard__home--content">
-    <div class="wrap">
+    <div class="wrap title__home--pets">
           <h3 class="section__title">Pets</h3>
           <a href="index.php?page=pets" class="viewall">View all</a>
     </div>
     <div class="list__home--pets">
+    <?php $loopp = 0 ?>
       <?php if(!empty($pets)) : ?>
         <?php foreach ($pets as $pet):?>
+          <?php $loopp++ ?>
           <a href=<?php echo "index.php?page=petdetail&id=" . $pet['id']; ?> class="link__wrapper">
             <img <?php echo "src=\"./assets/images/pettype" . $pet['type'] . ".jpg\""; ?> width= "100px" height="100px" alt="">
             <?php echo $pet['name']; ?>
           </a>
-          <?php if  ($pet['id']=='6') break; ?>
+          <?php if  ($loopp == 6) break; ?>
         <?php endforeach; ?>
       <?php endif; ?>
     </div>
 
   <!-- Overview of Events -->
-    <div class="wrap">
+    <div class="wrap title__home--events">
         <h3 class="section__title">Events</h3>
         <a href="index.php?page=events" class="viewall">View all</a>
     </div>
     <div class="list__home--events">
-    <?php $loop = 0 ?>
+    <?php $loope = 0 ?>
       <?php if(!empty($events)) : ?>
         <?php foreach ($events as $event):?>
-          <?php $loop++ ?>
+          <?php $loope++ ?>
           <a href=<?php echo "index.php?page=eventdetail&id=" . $event['eventid']; ?> class="link__wrapper link__wrapper--events">
             <div class="home-events-image">
               <img src="./assets/images/magnifyingglass.png" width="50px" height="50px" alt="">
@@ -52,7 +54,7 @@
               <img src="./assets/images/magnifyingglass.png" width="25px" height="25px" alt="">
             </div>
           </a>
-          <?php if  ($loop == 2) break; ?>
+          <?php if  ($loope == 6) break; ?>
           <?php endforeach; ?>
       <?php endif; ?>
     </div>

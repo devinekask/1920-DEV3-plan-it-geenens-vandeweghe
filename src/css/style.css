@@ -126,7 +126,7 @@ p {
 
 .dashboard__home--purple {
   grid-area: 2 / 3 / 2 / 4;
-  background-color: #70cbd3;
+  background-color: #dbb2ff;
 }
 
 .dashboard__home--red,
@@ -218,7 +218,7 @@ p {
 }
 
 .link__wrapper {
-  background-color: #61cb96;
+  background-color: #70cbd3;
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -226,7 +226,7 @@ p {
   text-decoration: none;
   padding: var(--marginSmall);
   border-radius: 4px;
-  border: #61cb96 .3rem solid;
+  border: #70cbd3 .3rem solid;
   margin-bottom: var(--marginSmall);
 }
 
@@ -246,7 +246,7 @@ p {
 }
 
 .link__wrapper--name {
-  background-color: #ed7a84;
+  background-color: #70cbd3;
   width: min-content;
   color: white;
   font-size: var(--fontsizeMedium);
@@ -263,7 +263,7 @@ p {
   grid-template-columns: 2fr 6fr 2fr;
   background-color: white;
   color: black;
-  border: #ed7a84 .3rem solid;
+  border: #70cbd3 .3rem solid;
 }
 
 .home-events-image {
@@ -290,7 +290,7 @@ p {
 }
 
 .viewall {
-  color: #61cb96;
+  color: #70cbd3;
 }
 
 .detail-label {
@@ -350,7 +350,7 @@ p {
   margin-bottom: var(--marginMedium);
 }
 
-@media only screen and (min-width: 420px) {
+@media only screen and (max-width: 420px) {
 
   .petinfo-wrapper {
     flex-flow: column;
@@ -360,20 +360,54 @@ p {
 
 @media only screen and (min-width: 1024px) {
 
+  body {
+    height: 100%;
+  }
+
   .content-wrapper {
+    display: grid;
     grid-template-areas:
       'dashboard content'
       'dashboard content';
+    grid-template-columns: 30rem auto;
+    grid-template-rows: auto;
   }
 
   .dashboard__home--header {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
     grid-area: dashboard;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    margin: 0 var(--marginMedium) 0 0;
+
   }
 
+  .dashboard__item {
+    margin: 7px;
+  }
 }
 
-@media only screen and (max-width: 1440px) {
+@media only screen and (min-width: 1440px) {
 
+  .list__home--pets {
+    margin: 0;
+  }
+
+  .dashboard__home--content {
+    display: grid;
+    grid-template-areas:
+      'petstitle eventstitle'
+      'petscontent eventscontent';
+    grid-template-columns: 1fr  1fr;
+    grid-template-rows: auto;
+    column-gap: 4rem;
+  }
+
+  .title__home--pets {
+    grid-area: petstitle;
+  }
+
+  .title__home--events {
+    grid-area: eventstitle;
+  }
 }
