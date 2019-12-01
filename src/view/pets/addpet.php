@@ -27,8 +27,6 @@
 
     <fieldset class="hidden" id="phase4">
       <legend>Was <span id="js-insaname3"></span> chipped?</legend>
-      <!-- <input type="button" id="chipped" name="chipped" value="yes"><br>
-      <input type="button" id="chipped" name="chipped" value="no"><br> -->
       <select id="achipped" name="achipped">
         <option value="yes">Yes!</option>
         <option value="no">No.</option>

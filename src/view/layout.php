@@ -36,14 +36,14 @@
 
         <!-- Footer/Navigation -->
   <footer>
-    <a href="index.php?page=index" class="active">
-      <img src="./assets/images/blackhomeselected.svg" alt="home">
+    <a href="index.php?page=index">
+      <img src=<?php if ($_GET['page'] == "home") {echo "\"./assets/images/blackhomeselected.svg\"";} else {echo "\"./assets/images/blackhome.svg\"";} ?> alt="home">
     </a>
     <a href="index.php?page=pets">
-      <img src="./assets/images/blackpets.svg" alt="pets">
+      <img src=<?php if ($_GET['page'] == "pets") {echo "\"./assets/images/blackpetsselected.svg\"";} else {echo "\"./assets/images/blackpets.svg\"";} ?> alt="pets">
     </a>
-    <a href="index.php?page=events">
-      <img src="./assets/images/blackcalendar.svg" alt="calendar">
+    <a href="index.php?page=events" <?php if ($_GET['page'] == "events" || empty($_GET['page'])) {echo "class=\"active\"";} ?>>
+      <img src=<?php if ($_GET['page'] == "events") {echo "\"./assets/images/blackcalendarselected.svg\"";} else {echo "\"./assets/images/blackcalendar.svg\"";} ?> alt="calendar">
     </a>
   </footer>
     <?php echo $js; ?>

@@ -2,13 +2,10 @@ let animal, aname, abirthdate, agender, achipped, achipid, aowner;
 function _(x) {
   return document.getElementById(x);
 }
-
-console.log('hello');
 // Defines all phases, saves them and continues to next
 // Kind of animal
 function processPhase1() {
   animal = _('animal').value;
-  console.log(animal);
   if (animal.length === 1) {
     _('phase1').style.display = 'none';
     _('phase2').style.display = 'block';
@@ -40,7 +37,6 @@ function processPhase1() {
 // Name of pet
 function processPhase2() {
   aname = _('aname').value;
-  console.log(aname);
   if (aname.length > 0) {
     _('phase2').style.display = 'none';
     _('phase3').style.display = 'block';
@@ -63,7 +59,6 @@ function processPhase3() {
 // Was chipped? if yes -- phase 4, if no phase 5 & null
 function processPhase4() {
   achipped = _('achipped').value;
-  console.log(achipped);
   if (achipped === 'yes') {
     _('phase4').style.display = 'none';
     _('phase5').style.display = 'block';
