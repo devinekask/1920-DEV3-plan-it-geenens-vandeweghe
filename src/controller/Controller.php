@@ -20,11 +20,6 @@ class Controller {
     $this->set('css', '');
     if ($this->env == 'development') {
       // regular script in production
-      $this->set('js', '<script src="js/script.js"></script>');
-       // regular css in production
-      $this->set('css', '<link href="style.css" rel="stylesheet">');
-    }else if($this->env == 'production') {
-      // regular script in production
       $this->set('js', '<script src="script.js"></script>');
        // regular css in production
       $this->set('css', '<link href="style.css" rel="stylesheet">');
