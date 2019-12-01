@@ -1,17 +1,24 @@
-<div class="pets_container">
+<p class="black">Order pets by</p>
+<div class="content-wrapper">
+<section class="dashboard dashboard__pets--header">
+    <h2 class="hidden">Dashboard</h2>
+        <a href="index.php?page=pets" class="dashboard__item dashbboard__pets--green">Gender</a>
+        <a href="index.php?page=addpet" class="dashboard__item dashboard__pets--red">Age</a>
+        <a href="index.php?" class="dashboard__item dashboard__pets--yellow">Type</a>
+</section>
 
-<?php if(!empty($pets)) : ?>
-<?php $chunks = array_chunk($data, 6); ?>
-<?php foreach($chunks as $pets) : ?>
-<?php foreach ($pets as $pet):?>
-<article>
-  <h3 class="hidden"><?php echo $pet['name']; ?></h3>
-<ul class="pet <?php $pet['color'] ?>">
-  <li class="pet_image"><?php echo $pet['image']?></li>
-  <li class="pet_name"><?php echo $pet['name']?></li>
-</ul>
-</article>
-    <?php endforeach; ?>
-    <?php endforeach; ?>
+
+<section class="dashboard dashboard__pets--content">
+    <div class="list__pets--pets">
+    <?php if(!empty($pets)) : ?>
+      <?php foreach ($pets as $pet):?>
+        <div class="list__wrapper">
+          <img <?php echo `src="pettype` . $pet['type'] . `"`; ?> width= "100px" height="100px" alt="">
+          <a href=<?php echo "index.php?page=petdetail&id=" . $pet['id']; ?> class="list__item"><?php echo $pet['name']; ?></a>
+        </div>
+      <?php endforeach; ?>
     <?php endif; ?>
-    </div>
+    <a class="add add-pet" href="index.php?page=addpet">+</a>
+</div>
+</section>
+</div>

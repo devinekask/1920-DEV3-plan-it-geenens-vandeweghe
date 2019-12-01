@@ -16,7 +16,7 @@ $routes = array(
     'action' => 'index'
   ),
   'addevent' => array(
-    'controller' => 'Pets',
+    'controller' => 'Events',
     'action' => 'addevent'
   ),
   'addpet' => array(
@@ -28,12 +28,16 @@ $routes = array(
     'action' => 'pets'
   ),
   'events' => array(
-    'controller' => 'Pets',
+    'controller' => 'Events',
     'action' => 'events'
   ),
-  'detail' => array(
+  'petdetail' => array(
     'controller' => 'Pets',
-    'action' => 'detail'
+    'action' => 'petdetail'
+  ),
+  'eventdetail' => array(
+    'controller' => 'Events',
+    'action' => 'eventdetail'
   )
 );
 

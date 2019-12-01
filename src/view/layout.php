@@ -4,16 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>PetPlanner - <?php echo $title; ?></title>
+    <title>PetPlanner - <?php echo $_GET['page']; ?></title>
     <?php echo $css;?>
   </head>
   <body>
     <!-- Header -->
     <header>
     <div class="centerd">
-      <a class="center">Dashboard</a>
-      <a class="search">Search</a>
-      <a class="profile">Profile</a>
+      <h1 class="center"><?php switch ($_GET['page']) {
+        case 'home';echo "Dashboard";break;
+        case 'pets';echo "All Pets";break;
+        case 'events';echo "All Events";break;
+        case 'petdetail';echo "Details of a pet";break;
+        case 'eventdetail';echo "Details of an event";break;
+        case 'addpet';echo "Add a pet";break;
+        case 'addevent';echo "Add an event";break;
+        }?></h1>
+      <div class="center__wrap">
+        <a class="profile"><img src="/assets/images/profile.png" width="35px" height="35px" alt="profile"></a>
+      </div>
     </div>
   </header>
       <?php
@@ -27,15 +36,6 @@
 
 
   <!-- Content -->
-    <section class="dashboard">
-    <h2 class="hidden">Dashboard</h2>
-        <a href="index.php?page=pets" class="dashboard__item green">Pets</a>
-        <a href="index.php?page=addpet" class="dashboard__item red">addpet</a>
-        <a href="index.php?page=addevent" class="dashboard__item orange">addevent</a>
-        <a href="index.php?" class="dashboard__item yellow">Unassigned</a>
-        <a href="index.php?" class="dashboard__item blue">Unassigned</a>
-    </div>
-    </section>
     <section class="content">
         <?php echo $content;?>
     </section>
@@ -43,17 +43,16 @@
 
         <!-- Footer/Navigation -->
   <footer>
-    <a href="index.php?page=index" class="active">
-      <img src="./assets/images/homeselected.svg" alt="home">
+    <a href="index.php?page=index">
+      <img src=<?php if ($_GET['page'] == "home") {echo "\"./assets/images/blackhomeselected.svg\"";} else {echo "\"./assets/images/blackhome.svg\"";} ?> alt="home">
     </a>
     <a href="index.php?page=pets">
-      <img src="./assets/images/pets.svg" alt="pets">
+      <img src=<?php if ($_GET['page'] == "pets") {echo "\"./assets/images/blackpetsselected.svg\"";} else {echo "\"./assets/images/blackpets.svg\"";} ?> alt="pets">
     </a>
-    <a href="index.php?page=events">
-      <img src="./assets/images/calendar.svg" alt="calendar">
+    <a href="index.php?page=events" <?php if ($_GET['page'] == "events" || empty($_GET['page'])) {echo "class=\"active\"";} ?>>
+      <img src=<?php if ($_GET['page'] == "events") {echo "\"./assets/images/blackcalendarselected.svg\"";} else {echo "\"./assets/images/blackcalendar.svg\"";} ?> alt="calendar">
     </a>
   </footer>
     <?php echo $js; ?>
   </body>
 </html>
-

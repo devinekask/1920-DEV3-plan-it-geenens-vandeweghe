@@ -2,25 +2,43 @@
 
 require_once( __DIR__ . '/DAO.php');
 
-class TodoDAO extends DAO {
+class EventsDAO extends DAO {
 
   public function selectAll(){
-    $sql = "SELECT * FROM `todos`";
+    $sql = "SELECT *,E.id as eventid ,P.name as petname, E.name as eventname FROM `petevents` as E
+    inner join pets as P
+    on E.petid = P.id";
     $stmt = $this->pdo->prepare($sql);
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
 
   public function selectById($id){
-    $sql = "SELECT * FROM `todos` WHERE `id` = :id";
+    $sql = "SELECT * FROM `petevents` WHERE `id` = :id";
     $stmt = $this->pdo->prepare($sql);
     $stmt->bindValue(':id', $id);
     $stmt->execute();
     return $stmt->fetch(PDO::FETCH_ASSOC);
   }
 
+  public function selectByPetId($petId){
+    $sql = "SELECT * FROM `petevents` WHERE `petid` = :id";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->bindValue(':id', $petId);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+  public function updatePetById($ventid){
+    $sql = "UPDATE `petevents` SET `name` = :name , `description` = :desc, `petid` = :petid, `date` = :date, `location` = :location WHERE `petevents`.`id` = :id;";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->bindValue(':id', $eventid);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
+
   public function delete($id){
-    $sql = "DELETE FROM `todos` WHERE `id` = :id";
+    $sql = "DELETE FROM `petevents` WHERE `id` = :id";
     $stmt = $this->pdo->prepare($sql);
     $stmt->bindValue(':id', $id);
     return $stmt->execute();
@@ -29,32 +47,37 @@ class TodoDAO extends DAO {
   public function insert($data) {
     $errors = $this->validate( $data );
     if (empty($errors)) {
-      $sql = "INSERT INTO `todos` (`created`, `modified`, `checked`, `text`) VALUES (:created, :modified, :checked, :text)";
+      $sql = "INSERT INTO `petevents` (`id`, `name`, `description`, `petid`, `date`, `time`, `type`) VALUES (NULL, :name, :description, :petid), :date, :time, :type";
       $stmt = $this->pdo->prepare($sql);
-      $stmt->bindValue(':created', $data['created']);
-      $stmt->bindValue(':modified', $data['modified']);
-      $stmt->bindValue(':checked', $data['checked']);
-      $stmt->bindValue(':text', $data['text']);
-      if ($stmt->execute()) {
-        return $this->selectById($this->pdo->lastInsertId());
-      }
+      $stmt->bindValue(':id', $data['id']);
+      $stmt->bindValue(':name', $data['name']);
+      $stmt->bindValue(':description', $data['description']);
+      $stmt->bindValue(':petid', $data['petid']);
+      $stmt->bindValue(':date', $data['date']);
+      $stmt->bindValue(':time', $data['time']);
+      $stmt->bindValue(':type', $data['type']);
+      $stmt->execute();
+      return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     return false;
   }
 
   public function validate( $data ){
     $errors = [];
-    if (!isset($data['created'])) {
-      $errors['created'] = 'Gelieve created in te vullen';
+    if (!isset($data['name'])) {
+      $errors['name'] = 'Gelieve het onderwerp in te vullen';
     }
-    if (!isset($data['modified'])) {
-      $errors['modified'] = 'Gelieve modified in te vullen';
+    if (!isset($data['description'])) {
+      $errors['description'] = 'Gelieve beschrijving in te vullen';
     }
-    if (!isset($data['checked'])) {
-      $errors['checked'] = 'Gelieve checked in te vullen';
+    if (empty($data['date']) ){
+      $errors['date'] = 'Gelieve een datum in te vullen';
     }
-    if (empty($data['text']) ){
-      $errors['text'] = 'Gelieve een text in te vullen';
+    if (!isset($data['time'])) {
+      $errors['time'] = 'Gelieve tijdstip in te vullen';
+    }
+    if (empty($data['type']) ){
+      $errors['type'] = 'Gelieve een type te selecteren';
     }
     return $errors;
   }

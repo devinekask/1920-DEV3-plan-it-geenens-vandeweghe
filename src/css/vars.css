@@ -3,13 +3,14 @@
   --backgroundColor: #f9d2cb;
   --textColor: #212121;
   --secondarytextColor: #9c9c9c;
+  --atextColor: white;
   --accentColor: #a3f4dc;
 
   /* Fontsizes */
   --fontsizeMini: 12px;
   --fontsizeSmall: 14px;
-  --fontsizeMedium: 16px;
-  --fontsizeBig: 18px;
+  --fontsizeMedium: 18px;
+  --fontsizeBig: 24px;
   --fontsizeMega: 26px;
 
   /* Margins */
