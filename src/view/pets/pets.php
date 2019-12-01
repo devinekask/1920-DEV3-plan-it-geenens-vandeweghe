@@ -1,5 +1,5 @@
-
-<p>Order pets by</p>
+<p class="black">Order pets by</p>
+<div class="content-wrapper">
 <section class="dashboard dashboard__pets--header">
     <h2 class="hidden">Dashboard</h2>
         <a href="index.php?page=pets" class="dashboard__item dashbboard__pets--green">Gender</a>
@@ -10,13 +10,14 @@
 
 <section class="dashboard dashboard__pets--content">
     <div class="list__pets--pets">
-<?php if(!empty($pets)) : ?>
+    <?php if(!empty($pets)) : ?>
       <?php foreach ($pets as $pet):?>
-            <div class="list__wrapper">
-              <img <?php echo `src="pettype` . $pet['type'] . `"`; ?> width= "100px" height="100px" alt="">
-              <a href=<?php echo "index.php?page=petdetail&id=" . $pet['id']; ?> class="list__item"><?php echo $pet['name']; ?></a>
-            </div>
-        <?php endforeach; ?>
+        <div class="list__wrapper">
+          <img <?php echo `src="pettype` . $pet['type'] . `"`; ?> width= "100px" height="100px" alt="">
+          <a href=<?php echo "index.php?page=petdetail&id=" . $pet['id']; ?> class="list__item"><?php echo $pet['name']; ?></a>
+        </div>
+      <?php endforeach; ?>
     <?php endif; ?>
 </div>
 </section>
+</div>

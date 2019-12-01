@@ -91,7 +91,6 @@ p {
 .dashboard__home--header,
 .list__home--pets,
 .list__pets--pets,
-.list__events--events,
 .dashboard__home--pets {
   color: white;
   display: grid;
@@ -137,6 +136,10 @@ p {
   border-radius: .4rem;
 }
 
+.dashboard__events--content {
+  margin-top: var(--marginSmall);
+}
+
 .dashboard__pets--header,
 .dashboard__pets--pets {
   color: white;
@@ -165,9 +168,17 @@ p {
 
 .dashboard__pets--yellow,
 .dashboard__pets--red,
-.dashbboard__pets--green {
+.dashbboard__pets--green,
+.dashboard__events--blue,
+.dashboard__events--red,
+.dashboard__events--yellow,
+.dashboard__events--orange,
+.dashboard__events--purple,
+.dashboard__events--green,
+.dashboard__events--blue {
   height: 52.5px;
   border-radius: 4px;
+  color: black;
 }
 
 .dashboard__events--header,
@@ -373,13 +384,12 @@ p {
     grid-template-rows: auto;
   }
 
-  .dashboard__home--header {
+  .dashboard__home--header, .dashboard__pets--header, .dashboard__events--header {
     grid-area: dashboard;
     display: flex;
     flex-flow: column;
     justify-content: flex-start;
     margin: 0 var(--marginMedium) 0 0;
-
   }
 
   .dashboard__item {
@@ -401,6 +411,10 @@ p {
     grid-template-columns: 1fr  1fr;
     grid-template-rows: auto;
     column-gap: 4rem;
+  }
+
+  .black {
+    color: black;
   }
 
   .title__home--pets {
