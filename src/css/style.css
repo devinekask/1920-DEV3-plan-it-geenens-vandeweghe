@@ -361,6 +361,59 @@ p {
   margin-bottom: var(--marginMedium);
 }
 
+.add-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 40rem);
+  margin-top: 5rem;
+}
+
+.add-select {
+  color: white;
+  background-color: #70cbd3;
+  border: none;
+  border-bottom: #70cbd3 .2rem solid;
+  border-radius: 0;
+  font-size: var(--fontsizeBig);
+
+}
+
+.add-legend {
+  font-size: var(--fontsizeMega);
+  color: #70cbd3;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.add-input {
+  background-color: rgba(196, 196, 196, .1);
+  border: none;
+  border-bottom: #70cbd3 .2rem solid;
+  font-size: var(--fontsizeBig);
+  color: #70cbd3;
+}
+
+.add-button, .add-button-submit {
+  border-radius: 100px;
+  height: 10rem;
+  width: 10rem;
+  border: none;
+  float: right;
+  bottom: 8.5rem;
+  right: .7rem;
+  position: absolute;
+  color: white;
+  background-color: #70cbd3;
+  font-weight: bold;
+  font-size: var(--fontsizeMedium);
+}
+
+fieldset {
+  display: flex;
+  align-items: center;
+}
+
 @media only screen and (max-width: 420px) {
 
   .petinfo-wrapper {
@@ -425,3 +478,4 @@ p {
     grid-area: eventstitle;
   }
 }
+

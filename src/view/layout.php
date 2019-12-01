@@ -11,9 +11,16 @@
     <!-- Header -->
     <header>
     <div class="centerd">
-      <h1 class="center"><?php echo $_GET['page']?></h1>
+      <h1 class="center"><?php switch ($_GET['page']) {
+        case 'home';echo "Dashboard";break;
+        case 'pets';echo "All Pets";break;
+        case 'events';echo "All Events";break;
+        case 'petdetail';echo "Details of a pet";break;
+        case 'eventdetail';echo "Details of an event";break;
+        case 'addpet';echo "Add a pet";break;
+        case 'addevent';echo "Add an event";break;
+        }?></h1>
       <div class="center__wrap">
-        <a class="search"><img src="/assets/images/magnifyingglass.png" width="35px" height="35px" alt="picture of magnifying glass"></a>
         <a class="profile"><img src="/assets/images/profile.png" width="35px" height="35px" alt="profile"></a>
       </div>
     </div>

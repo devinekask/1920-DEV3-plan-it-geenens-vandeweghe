@@ -18,6 +18,7 @@
         </div>
       <?php endforeach; ?>
     <?php endif; ?>
+    <a class="add add-pet" href="index.php?page=addpet">+</a>
 </div>
 </section>
 </div>

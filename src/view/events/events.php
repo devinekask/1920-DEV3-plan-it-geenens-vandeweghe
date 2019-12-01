@@ -2,11 +2,11 @@
 <div class="content-wrapper">
 <section class="dashboard dashboard__events--header">
     <h2 class="hidden">Dashboard</h2>
+    <a href="index.php?page=" class="dashboard__item dashboard__events--orange">All events</a>
         <a href="index.php?page=" class="dashboard__item dashboard__events--green">This week</a>
+        <a href="index.php?page=" class="dashboard__item dashboard__events--red">This month</a>
         <a href="index.php?page=" class="dashboard__item dashboard__events--blue">🍼</a>
         <a href="index.php?page=" class="dashboard__item dashboard__events--yellow">💊</a>
-        <a href="index.php?page=" class="dashboard__item dashboard__events--red">This month</a>
-        <a href="index.php?page=" class="dashboard__item dashboard__events--orange">All events</a>
         <a href="index.php?page=" class="dashboard__item dashboard__events--purple">💉</a>
 </section>
 
