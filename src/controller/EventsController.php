@@ -25,6 +25,15 @@ class EventsController extends Controller {
   public function eventdetail(){
     $event = $this->eventsDAO->selectById($_GET['id']);
     $pet = $this->petDAO->selectById($event['petid']);
+
+
+    if(!empty($_POST['action'])){
+      if($_POST['action'] == 'deleteThisEvent'){
+        $deletedevent = $this->eventsDAO->deleteEventById($_GET['id']);
+        header('Location: index.php?page=events');
+      }
+    }
+
     $this->set('title', 'Detail');
     $this->set('event', $event);
     $this->set('pet', $pet);

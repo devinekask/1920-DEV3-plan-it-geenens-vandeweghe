@@ -1,9 +1,12 @@
 
 <h2 class="subtitle subtitle--petdetail">
 <?php echo $pet['name']?></h2>
+<form action='index.php?page=pets' method="post">
+<input type="hidden" name="action" value="deletethispet">
+        <input class="right" type="submit" name="submit" value="Delete this pet">
+    </form>
 <section class="petdetail">
-  <h3 class="subtitle--petdetailinfo">Information of <?php echo $pet['name'] ?></h3> <!--HIER--><button class="right" type="submit" name="remove" <?php echo "value=" . $_GET['id']; ?>>Remove pet</button>
-
+  <h3 class="subtitle--petdetailinfo">Information of <?php echo $pet['name'] ?></h3>
   <div class="petinfo-wrapper">
     <div class="petdetail__image">
     <img <?php echo "src=\"./assets/images/pettypecolorgreen" . $pet['type'] . ".svg\""; ?> width= "160px" height="160px" alt="">

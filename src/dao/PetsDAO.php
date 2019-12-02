@@ -19,17 +19,24 @@ class PetsDAO extends DAO {
     return $stmt->fetch(PDO::FETCH_ASSOC);
   }
 
-  public function delete($id){
+  public function deletePet($id){
     $sql = "DELETE FROM `pets` WHERE `id` = :id";
     $stmt = $this->pdo->prepare($sql);
     $stmt->bindValue(':id', $id);
     return $stmt->execute();
+    return $stmt->fetch(PDO::FETCH_ASSOC);
   }
 
-  public function updatePetById($petId){
-    $sql = "UPDATE `pets` SET `name` = :name, `gender` = :gender, `type` = :type, `birthday` = :bday, `owner` = :owner, `chipid` = :chip WHERE `pets`.`id` = :petid";
+  public function updatePetById($data){
+    $sql = "UPDATE pets SET name = :name, gender = :gender, type = :type, birthday = :bday, owner = :owner, chipid = :chip WHERE pets.`id` = :petid";
     $stmt = $this->pdo->prepare($sql);
-    $stmt->bindValue(':petid', $petId);
+    $stmt->bindValue(':petid', $_GET['id']);
+      $stmt->bindValue(':name', $data['aname']);
+      $stmt->bindValue(':gender', $data['agender']);
+      $stmt->bindValue(':kind', $data['animal']);
+      $stmt->bindValue(':birthd', $data['abirthdate']);
+      $stmt->bindValue(':owner', $data['aowner']);
+      $stmt->bindValue(':chipid', $data['achipid']);
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }

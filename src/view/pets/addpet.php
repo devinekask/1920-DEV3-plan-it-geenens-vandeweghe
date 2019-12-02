@@ -51,7 +51,7 @@
 
     <fieldset class="hidden" id="phase7">
       <legend class="add-legend">Who is the owner of <span id="js-insaname7">?</legend>
-      <input  class="add-input"type="text" name="aowner"><br>
+      <input  class="add-input" type="text" name="aowner"><br>
       <button class="add-button-submit" type="submit" onclick="submitForm()" value="Add Pet">ADD MY<br>PET</button>
     </fieldset>
 </form>

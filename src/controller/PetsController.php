@@ -42,18 +42,20 @@ class PetsController extends Controller {
       if(!empty($_GET['id'])){
         $pet = $this->petDAO->selectById($_GET['id']);
         $events = $this->eventsDAO->selectByPetId($_GET['id']);
+
       }
-  //error als er geen afl gevonden werd
+      //error als er geen pet gevonden werd
       if(empty($pet)){
         $_SESSION['error'] = 'The pet you were looking for is no where to be found';
         header('Location:index.php');
         exit();
       }
-      if (!empty($_POST['remove'])) {
-        $this->delete($_GET['id']);
+      if(!empty($_POST['action'])){
+      if($_POST['action'] == 'deletethispet'){
+        $deletedpet = $this->petDAO->deletePet($_GET['id']);
         header('Location: index.php?page=pets');
-        exit();
       }
+    }
 
       $this->set('title', 'Detail');
       $this->set('pet', $pet);

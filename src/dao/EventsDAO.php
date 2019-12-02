@@ -5,7 +5,7 @@ require_once( __DIR__ . '/DAO.php');
 class EventsDAO extends DAO {
 
   public function selectAll(){
-    $sql = "SELECT *,E.id as eventid ,P.name as petname, E.name as eventname FROM `petevents` as E
+    $sql = "SELECT *,E.id as eventid, P.type as pettype ,P.name as petname, E.name as eventname FROM `petevents` as E
     inner join pets as P
     on E.petid = P.id";
     $stmt = $this->pdo->prepare($sql);
@@ -37,11 +37,12 @@ class EventsDAO extends DAO {
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
 
-  public function delete($id){
+  public function deleteEventById($id){
     $sql = "DELETE FROM `petevents` WHERE `id` = :id";
     $stmt = $this->pdo->prepare($sql);
     $stmt->bindValue(':id', $id);
     return $stmt->execute();
+    return $stmt->fetch(PDO::FETCH_ASSOC);
   }
 
   public function insertEvent($data) {

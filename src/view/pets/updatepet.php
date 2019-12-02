@@ -1,3 +1,5 @@
+<form >
+<input type="hidden" name="action" value="updatePetById">
 <div class="petdetail__info">
       <div>
         <span class="detail-label">Type</span>
@@ -53,3 +55,6 @@
         <span class="detail-field"><?php echo $pet['chipid'] ?></span>
       </div>
     </div>
+
+
+    </form>
