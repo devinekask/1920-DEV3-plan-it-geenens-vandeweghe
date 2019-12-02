@@ -1,11 +1,13 @@
-<h2 class="subtitle subtitle--petdetail"><?php echo $pet['name']?></h2>
+
+<h2 class="subtitle subtitle--petdetail">
+<?php echo $pet['name']?></h2>
 <section class="petdetail">
-  <h3 class="subtitle--petdetailinfo">Information of <?php echo $pet['name'] ?></h3>
+  <h3 class="subtitle--petdetailinfo">Information of <?php echo $pet['name'] ?></h3> <!--HIER--><button class="right" type="submit" name="remove" <?php echo "value=" . $_GET['id']; ?>>Remove pet</button>
+
   <div class="petinfo-wrapper">
     <div class="petdetail__image">
-    <img <?php echo "src=\"./assets/images/pettypecolorgreen" . $pet['id'] . ".svg\""; ?> width= "160px" height="160px" alt="">
+    <img <?php echo "src=\"./assets/images/pettypecolorgreen" . $pet['type'] . ".svg\""; ?> width= "160px" height="160px" alt="">
     </div>
-
     <div class="petdetail__info">
       <div>
         <span class="detail-label-p">Type</span>
@@ -62,25 +64,24 @@
       </div>
     </div>
   </div>
-  <a <?php echo "href=\"index.php?page=updatepet&id=" . $pet['id'] . "\"" ?> class="float">update details</a>
   <h3 class="subtitle--petdetailevents">Upcomming events for <?php echo $pet['name'] ?></h3>
   <?php if(!empty($events)) : ?>
       <?php foreach ($events as $event):?>
         <a href=<?php echo "index.php?page=eventdetail&id=" . $event['id']; ?> class="link__wrapper link__wrapper--events">
-          <div class="home-events-image">
-            <img src="./assets/images/magnifyingglass.png" width="50px" height="50px" alt="">
-          </div>
-          <div class="home-events-info">
-            <span class="link__wrapper--name"><?php echo $pet['name']; ?></span> <!-- naam uit pets binnenhalen -->
-            <span class="link__wrapper--text"><?php echo $event['name']; ?></span>
-            <span class="link__wrapper--text"><?php echo $time = date('H:ia',strtotime($event['date']));?></span>
-            <span class="link__wrapper--text"><?php echo $date = date('dS M Y ',strtotime($event['date']));?></span>
-          </div>
-
-          <div class="home-events-reminder">
-            <img src="./assets/images/magnifyingglass.png" width="25px" height="25px" alt="">
-          </div>
-        </a>
+            <div class="home-events-image">
+              <img <?php echo "src=\"./assets/images/pettypecolor" . $event['petid'] . ".svg\""; ?> width= "40px" height="40px" alt="">
+            </div>
+            <div class="home-events-info">
+              <span class="link__wrapper--name"><?php echo $pet['name']; ?></span>
+            </div>
+            <div class="home-events-reminder">
+            <div class="link__wrapper--info">
+                <span><?php echo $event['name']; ?></span>
+                <span><?php echo $time = date('H:ia',strtotime($event['date']));?></span>
+                <span><?php echo $date = date('dS M Y ',strtotime($event['date']));?></span>
+              </div>
+            </div>
+          </a>
         <?php endforeach; ?>
     <?php endif; ?>
 </section>

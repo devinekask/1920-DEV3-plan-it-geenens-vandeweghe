@@ -185,8 +185,7 @@ p {
 .dashboard__events--yellow,
 .dashboard__events--orange,
 .dashboard__events--purple,
-.dashboard__events--green,
-.dashboard__events--blue {
+.dashboard__events--green {
   height: 52.5px;
   border-radius: 4px;
   color: black;
@@ -257,6 +256,7 @@ p {
   flex-flow: column;
   font-size: var(--fontsizeSmall);
 }
+
 .dashboard__item {
   color: white;
 }
@@ -302,7 +302,6 @@ p {
   display: flex;
   flex-flow: row;
 }
-
 
 .home-events-info:nth-child(1) {
   font-size: 3rem;
@@ -528,4 +527,3 @@ fieldset {
     grid-area: eventstitle;
   }
 }
-

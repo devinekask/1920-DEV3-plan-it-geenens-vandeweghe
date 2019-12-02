@@ -1,11 +1,11 @@
 <h2 class="subtitle subtitle--eventdetail"><?php echo $event['name']?></h2>
 <section class="eventdetail">
-  <h3 class="subtitle--petdetailinfo">Information sheet</h3>
+  <h3 class="subtitle--petdetailinfo">Information sheet</h3><!--HIER-->    <button class="right" type="submit" name="remove" <?php echo "value=" . $_GET['id']; ?>>Remove event</button>
   <div class="petinfo-wrapper">
     <div class="petdetail__image">
       <img <?php echo "src=\"./assets/images/pettypecolor" . $event['petid'] . ".svg\""; ?> width= "80px" height="80px" alt="">
     </div>
-
+    <button class="" type="submit" name="remove" <?php echo "value=" . $_GET['id']; ?>>Remove event</button>
     <div class="petdetail__info">
       <div>
         <span class="detail-label detail-label-e">Type of event</span>

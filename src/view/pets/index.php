@@ -41,7 +41,7 @@
           <?php $loope++ ?>
           <a href=<?php echo "index.php?page=eventdetail&id=" . $event['eventid']; ?> class="link__wrapper link__wrapper--events">
             <div class="home-events-image">
-              <img <?php echo "src=\"./assets/images/pettypecolor" . $event['petid'] . ".svg\""; ?> width= "40px" height="40px" alt="">
+              <img <?php echo "src=\"./assets/images/pettypecolor" . $event['type'] . ".svg\""; ?> width= "40px" height="40px" alt="">
             </div>
             <div class="home-events-info">
               <span class="link__wrapper--name"><?php echo $event['petname']; ?></span>

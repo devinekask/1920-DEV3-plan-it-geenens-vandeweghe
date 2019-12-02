@@ -14,7 +14,7 @@ class EventsDAO extends DAO {
   }
 
   public function selectById($id){
-    $sql = "SELECT * FROM `petevents` WHERE `id` = :id";
+    $sql = "SELECT * FROM `petevents` WHERE `id` = :id ORDER BY `date` ASC";
     $stmt = $this->pdo->prepare($sql);
     $stmt->bindValue(':id', $id);
     $stmt->execute();
@@ -22,7 +22,7 @@ class EventsDAO extends DAO {
   }
 
   public function selectByPetId($petId){
-    $sql = "SELECT * FROM `petevents` WHERE `petid` = :id";
+    $sql = "SELECT * FROM `petevents` WHERE `petid` = :id ORDER BY `date` ASC";
     $stmt = $this->pdo->prepare($sql);
     $stmt->bindValue(':id', $petId);
     $stmt->execute();

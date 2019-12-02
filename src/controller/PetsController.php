@@ -49,6 +49,11 @@ class PetsController extends Controller {
         header('Location:index.php');
         exit();
       }
+      if (!empty($_POST['remove'])) {
+        $this->delete($_GET['id']);
+        header('Location: index.php?page=pets');
+        exit();
+      }
 
       $this->set('title', 'Detail');
       $this->set('pet', $pet);

@@ -35,4 +35,4 @@
 </div>
 </section>
 </div>
-<a href="index.php?page=addpet"><span class="add add-event">+</span></a>
+<a href="index.php?page=addevent"><span class="add add-event">+</span></a>
