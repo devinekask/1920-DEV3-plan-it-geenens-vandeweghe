@@ -12,10 +12,10 @@
     <div class="list__pets--pets">
     <?php if(!empty($pets)) : ?>
       <?php foreach ($pets as $pet):?>
-        <div class="list__wrapper">
-          <img <?php echo `src="pettype` . $pet['type'] . `"`; ?> width= "100px" height="100px" alt="">
-          <a href=<?php echo "index.php?page=petdetail&id=" . $pet['id']; ?> class="list__item"><?php echo $pet['name']; ?></a>
-        </div>
+        <a href=<?php echo "index.php?page=petdetail&id=" . $pet['id']; ?> class="link__wrapper">
+            <img <?php echo "src=\"./assets/images/pettype" . $pet['type'] . ".svg\""; ?> width= "80px" height="80px" alt="">
+            <?php echo $pet['name']; ?>
+          </a>
       <?php endforeach; ?>
     <?php endif; ?>
   </div>

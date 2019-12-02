@@ -23,7 +23,11 @@ class EventsController extends Controller {
   }
 
   public function eventdetail(){
+    $event = $this->eventsDAO->selectById($_GET['id']);
+    $pet = $this->petDAO->selectById($event['petid']);
     $this->set('title', 'Detail');
+    $this->set('event', $event);
+    $this->set('pet', $pet);
     $this->set('currentPage', 'detail');
   }
 

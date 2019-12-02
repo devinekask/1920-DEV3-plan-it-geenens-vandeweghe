@@ -40,8 +40,19 @@ p {
   border-radius: 4px;
 }
 
+.subtitle--eventdetail {
+  background-color: #70cbd3;
+  color: white;
+  padding: var(--marginSmall);
+  border-radius: 4px;
+}
+
 .wrap {
   display: flex;
+}
+
+.content {
+  height: 100vh;
 }
 
 .dashboard__home--content,
@@ -241,6 +252,11 @@ p {
   margin-bottom: var(--marginSmall);
 }
 
+.link__wrapper--info {
+  display: flex;
+  flex-flow: column;
+  font-size: var(--fontsizeSmall);
+}
 .dashboard__item {
   color: white;
 }
@@ -260,7 +276,7 @@ p {
   background-color: #70cbd3;
   width: min-content;
   color: white;
-  font-size: var(--fontsizeMedium);
+  font-size: var(--fontsizeBig);
   padding: .2rem;
 }
 
@@ -271,7 +287,7 @@ p {
 
 .link__wrapper--events {
   display: grid;
-  grid-template-columns: 2fr 6fr 2fr;
+  grid-template-columns: 2fr 3fr 2fr;
   background-color: white;
   color: black;
   border: #70cbd3 .3rem solid;
@@ -284,8 +300,9 @@ p {
 .home-events-info {
   font-size: var(--fontsizeMini);
   display: flex;
-  flex-flow: column;
+  flex-flow: row;
 }
+
 
 .home-events-info:nth-child(1) {
   font-size: 3rem;
@@ -304,7 +321,7 @@ p {
   color: #70cbd3;
 }
 
-.detail-label {
+.detail-label-p {
   font-size: var(--fontsizeMedium);
   opacity: .6;
   padding-bottom: .2rem;
@@ -312,7 +329,15 @@ p {
   border-radius: 0 0 4px;
 }
 
-.detail-field {
+.detail-label-e {
+  border-bottom: #70cbd3 .1rem solid;
+  font-size: var(--fontsizeMedium);
+  opacity: .6;
+  padding-bottom: .2rem;
+  border-radius: 0 0 4px;
+}
+
+.detail-field-p {
   font-size: var(--fontsizeBig);
   width: 100%;
   padding: 1rem 0 .2rem 1rem;
@@ -327,6 +352,12 @@ p {
     'subtitle-events subtitle-events'
     'events events'; */
   color: #61cb96;
+  height: 100vh;
+}
+
+.eventdetail {
+  color: #70cbd3;
+  height: 100vh;
 }
 
 .petinfo-wrapper {
@@ -409,7 +440,7 @@ p {
   font-size: var(--fontsizeMedium);
 }
 
-.add-pet {
+.add-pet, .add-event {
   text-align: center;
   align-self: center;
   border-radius: 100px;
@@ -425,6 +456,7 @@ p {
   background-color: #70cbd3;
   font-weight: bold;
   font-size: var(--fontsizeMedium);
+  z-index: 1;
 }
 
 fieldset {

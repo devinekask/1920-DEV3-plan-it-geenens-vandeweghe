@@ -3,13 +3,13 @@
   <h3 class="subtitle--petdetailinfo">Information of <?php echo $pet['name'] ?></h3>
   <div class="petinfo-wrapper">
     <div class="petdetail__image">
-      <img src="" alt="">
+    <img <?php echo "src=\"./assets/images/pettypecolorgreen" . $pet['id'] . ".svg\""; ?> width= "160px" height="160px" alt="">
     </div>
 
     <div class="petdetail__info">
       <div>
-        <span class="detail-label">Type</span>
-        <span class="detail-field">
+        <span class="detail-label-p">Type</span>
+        <span class="detail-field-p">
           <?php switch ($pet['type']) {
             case 1:
               echo 'Bird';
@@ -34,13 +34,13 @@
       </div>
 
       <div>
-        <span class="detail-label">Owner</span>
-        <span class="detail-field"><?php echo $pet['owner'] ?></span>
+        <span class="detail-label-p">Owner</span>
+        <span class="detail-field-p"><?php echo $pet['owner'] ?></span>
       </div>
 
       <div>
-        <span class="detail-label">Gender</span>
-        <span class="detail-field">
+        <span class="detail-label-p">Gender</span>
+        <span class="detail-field-p">
         <?php if ($pet['gender'] == 0) {
           echo 'Male';
         } elseif ($pet['gender'] == 1) {
@@ -52,13 +52,13 @@
       </div>
 
       <div>
-        <span class="detail-label">Birthday</span>
-        <span class="detail-field"><?php echo $bday = date('dS F Y', strtotime($pet['birthday'])) ?></span>
+        <span class="detail-label-p">Birthday</span>
+        <span class="detail-field-p"><?php echo $bday = date('dS F Y', strtotime($pet['birthday'])) ?></span>
       </div>
 
       <div>
-        <span class="detail-label">Chipid</span>
-        <span class="detail-field"><?php echo $pet['chipid'] ?></span>
+        <span class="detail-label-p">Chipid</span>
+        <span class="detail-field-p"><?php echo $pet['chipid'] ?></span>
       </div>
     </div>
   </div>

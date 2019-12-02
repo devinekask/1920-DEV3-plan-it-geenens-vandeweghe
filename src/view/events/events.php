@@ -17,17 +17,17 @@
         <?php foreach ($events as $event):?>
           <a href=<?php echo "index.php?page=eventdetail&id=" . $event['eventid']; ?> class="link__wrapper link__wrapper--events">
             <div class="home-events-image">
-              <img src="./assets/images/magnifyingglass.png" width="50px" height="50px" alt="">
+              <img <?php echo "src=\"./assets/images/pettypecolor" . $event['petid'] . ".svg\""; ?> width= "40px" height="40px" alt="">
             </div>
             <div class="home-events-info">
               <span class="link__wrapper--name"><?php echo $event['petname']; ?></span>
-              <span><?php echo $event['eventname']; ?></span>
-              <span><?php echo $time = date('H:ia',strtotime($event['date']));?></span>
-              <span><?php echo $date = date('dS M Y ',strtotime($event['date']));?></span>
             </div>
-
             <div class="home-events-reminder">
-              <img src="./assets/images/magnifyingglass.png" width="25px" height="25px" alt="">
+            <div class="link__wrapper--info">
+                <span><?php echo $event['eventname']; ?></span>
+                <span><?php echo $time = date('H:ia',strtotime($event['date']));?></span>
+                <span><?php echo $date = date('dS M Y ',strtotime($event['date']));?></span>
+              </div>
             </div>
           </a>
           <?php endforeach; ?>
@@ -35,3 +35,4 @@
 </div>
 </section>
 </div>
+<a href="index.php?page=addpet"><span class="add add-event">+</span></a>
