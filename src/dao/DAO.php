@@ -11,7 +11,7 @@ class DAO {
 
 		if(empty(self::$sharedPDO)) {
 
-      $dbHost = getenv('PHP_DB_HOST') ?: "ID282148_petplanner.db.webhosting.be";
+      $dbHost = getenv('PHP_DB_HOST') ?: "localhost";
       $dbName = getenv('PHP_DB_DATABASE') ?: "ID282148_petplanner";
       $dbUser = getenv('PHP_DB_USERNAME') ?: "ID282148_petplanner";
       $dbPass = getenv('PHP_DB_PASSWORD') ?: "Petplanner20192020";
