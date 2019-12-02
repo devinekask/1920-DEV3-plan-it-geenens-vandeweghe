@@ -409,6 +409,24 @@ p {
   font-size: var(--fontsizeMedium);
 }
 
+.add-pet {
+  text-align: center;
+  align-self: center;
+  border-radius: 100px;
+  height: 5rem;
+  width: 5rem;
+  padding-top: 1.5rem;
+  border: none;
+  float: right;
+  bottom: 6.5rem;
+  right: .7rem;
+  position: absolute;
+  color: white;
+  background-color: #70cbd3;
+  font-weight: bold;
+  font-size: var(--fontsizeMedium);
+}
+
 fieldset {
   display: flex;
   align-items: center;

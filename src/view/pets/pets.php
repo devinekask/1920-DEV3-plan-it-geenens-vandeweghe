@@ -18,7 +18,7 @@
         </div>
       <?php endforeach; ?>
     <?php endif; ?>
-    <a class="add add-pet" href="index.php?page=addpet">+</a>
-</div>
+  </div>
 </section>
 </div>
+<a href="index.php?page=addpet"><span class="add add-pet">+</span></a>

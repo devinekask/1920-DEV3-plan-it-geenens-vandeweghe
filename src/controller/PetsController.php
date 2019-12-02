@@ -53,8 +53,14 @@ class PetsController extends Controller {
       $this->set('title', 'Detail');
       $this->set('pet', $pet);
       $this->set('events', $events);
-      $this->set('currentPage', 'detail');
+      $this->set('currentPage', 'petdetail');
 
+    }
+    public function updatepet(){
+      $pets = $this->petsDAO->updatePetById($_GET['petid']);
+      $this->set('title', 'Update Pet');
+      $this->set('pets', $pets);
+      $this->set('currentPage', 'updatepet');
     }
 
     public function addpet(){

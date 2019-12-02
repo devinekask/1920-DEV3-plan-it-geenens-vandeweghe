@@ -62,6 +62,7 @@
       </div>
     </div>
   </div>
+  <a <?php echo "href=\"index.php?page=updatepet&id=" . $pet['id'] . "\"" ?> class="float">update details</a>
   <h3 class="subtitle--petdetailevents">Upcomming events for <?php echo $pet['name'] ?></h3>
   <?php if(!empty($events)) : ?>
       <?php foreach ($events as $event):?>
