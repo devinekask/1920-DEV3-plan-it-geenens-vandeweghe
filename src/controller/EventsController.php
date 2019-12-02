@@ -37,7 +37,7 @@ class EventsController extends Controller {
     $this->set('title', 'Detail');
     $this->set('event', $event);
     $this->set('pet', $pet);
-    $this->set('currentPage', 'detail');
+    $this->set('currentPage',  'detail');
   }
 
   public function addevent(){
