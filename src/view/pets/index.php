@@ -21,7 +21,7 @@
         <?php foreach ($pets as $pet):?>
           <?php $loopp++ ?>
           <a href=<?php echo "index.php?page=petdetail&id=" . $pet['id']; ?> class="link__wrapper">
-            <img <?php echo "src=\"./assets/images/pettype" . $pet['type'] . ".jpg\""; ?> width= "80px" height="80px" alt="">
+            <img <?php echo "src=\"./assets/images/pettype" . $pet['type'] . ".svg\""; ?> width= "80px" height="80px" alt="">
             <?php echo $pet['name']; ?>
           </a>
           <?php if  ($loopp == 6) break; ?>

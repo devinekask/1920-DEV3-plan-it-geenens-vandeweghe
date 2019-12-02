@@ -1,4 +1,5 @@
 let animal, aname, abirthdate, agender, achipped, achipid, aowner;
+let ename, edescription, elocation, epetid, edate, etime, etype;
 function _(x) {
   return document.getElementById(x);
 }
@@ -107,4 +108,84 @@ function submitForm() {
   _('multiphase').method = 'post';
   _('multiphase').action = 'index.php?page=addpet';
   _('multiphase').submit();
+}
+// Events
+
+//id of pet
+function processPhase1e() {
+  epetid = _('epetid').value;
+  if (epetid.length > 0) {
+    _('phase1e').style.display = 'none';
+    _('phase2e').style.display = 'block';
+  } else {
+    alert('Please choose an animal');
+  }
+}
+
+// type event
+function processPhase2e() {
+  etype = _('etype').value;
+  console.log('helo');
+  if (etype.length > 0) {
+    _('phase2e').style.display = 'none';
+    _('phase3e').style.display = 'block';
+  } else {
+    alert('Please specify the event');
+  }
+}
+
+//name event
+function processPhase3e() {
+  ename = _('ename').value;
+  if (ename.length >= 0) {
+    _('phase3e').style.display = 'none';
+    _('phase4e').style.display = 'block';
+  } else {
+    alert('Please give your event a name');
+  }
+}
+// info desc
+function processPhase4e() {
+  edescription = _('edescription').value;
+  if (edescription.length >= 0) {
+    _('phase4e').style.display = 'none';
+    _('phase5e').style.display = 'block';
+  } else {
+    alert('Please add a description to the event');
+  }
+}
+// when
+function processPhase5e() {
+  edate = _('edate').value;
+  if (edate.length >= 0) {
+    _('phase5e').style.display = 'none';
+    _('phase6e').style.display = 'block';
+  } else {
+    alert('Please pick a day');
+  }
+}
+// what time
+function processPhase6e() {
+  etime = _('etime').value;
+  if (etime.length > 0) {
+    _('phase6e').style.display = 'none';
+    _('phase7e').style.display = 'block';
+  } else {
+    alert('Please pick a time');
+  }
+}
+// location
+function processPhase7e() {
+  elocation = _('elocation').value;
+  if (elocation.length > 0) {
+    _('phase7e').style.display = 'none';
+  } else {
+    alert('Please provide a location');
+  }
+}
+
+function submitForme() {
+  _('multiphasee').method = 'post';
+  _('multiphasee').action = 'index.php?page=addevent';
+  _('multiphasee').submit();
 }

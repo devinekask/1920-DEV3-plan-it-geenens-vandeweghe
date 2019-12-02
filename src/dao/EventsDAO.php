@@ -44,18 +44,17 @@ class EventsDAO extends DAO {
     return $stmt->execute();
   }
 
-  public function insert($data) {
+  public function insertEvent($data) {
     $errors = $this->validate( $data );
     if (empty($errors)) {
-      $sql = "INSERT INTO `petevents` (`id`, `name`, `description`, `petid`, `date`, `time`, `type`) VALUES (NULL, :name, :description, :petid), :date, :time, :type";
+      $sql = "INSERT INTO `petevents` (`id`, `name`, `description`, `petid`, `date`, `type`, `location`) VALUES (NULL, :name, :description, :petid, :date, :type, :location);";
       $stmt = $this->pdo->prepare($sql);
-      $stmt->bindValue(':id', $data['id']);
-      $stmt->bindValue(':name', $data['name']);
-      $stmt->bindValue(':description', $data['description']);
-      $stmt->bindValue(':petid', $data['petid']);
-      $stmt->bindValue(':date', $data['date']);
-      $stmt->bindValue(':time', $data['time']);
-      $stmt->bindValue(':type', $data['type']);
+      $stmt->bindValue(':name', $data['ename']);
+      $stmt->bindValue(':description', $data['edescription']);
+      $stmt->bindValue(':petid', $data['epetid']);
+      $stmt->bindValue(':date', $data['edate']);
+      $stmt->bindValue(':type', $data['etype']);
+      $stmt->bindValue(':location', $data['elocation']);
       $stmt->execute();
       return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -64,20 +63,8 @@ class EventsDAO extends DAO {
 
   public function validate( $data ){
     $errors = [];
-    if (!isset($data['name'])) {
+    if (!isset($data['ename'])) {
       $errors['name'] = 'Gelieve het onderwerp in te vullen';
-    }
-    if (!isset($data['description'])) {
-      $errors['description'] = 'Gelieve beschrijving in te vullen';
-    }
-    if (empty($data['date']) ){
-      $errors['date'] = 'Gelieve een datum in te vullen';
-    }
-    if (!isset($data['time'])) {
-      $errors['time'] = 'Gelieve tijdstip in te vullen';
-    }
-    if (empty($data['type']) ){
-      $errors['type'] = 'Gelieve een type te selecteren';
     }
     return $errors;
   }

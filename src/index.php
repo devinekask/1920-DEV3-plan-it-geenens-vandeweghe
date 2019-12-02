@@ -38,6 +38,14 @@ $routes = array(
   'eventdetail' => array(
     'controller' => 'Events',
     'action' => 'eventdetail'
+  ),
+  'updatepet' => array(
+    'controller' => 'Pets',
+    'action' => 'updatepet'
+  ),
+  'updateevent' => array(
+    'controller' => 'Events',
+    'action' => 'updateevent'
   )
 );
 
