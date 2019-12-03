@@ -7,7 +7,7 @@
     </form>
   <div class="petinfo-wrapper">
     <div class="petdetail__image">
-      <img <?php echo "src=\"./assets/images/pettypecolor" . $event['petid'] . ".svg\""; ?> width= "80px" height="80px" alt="">
+      <img <?php echo "src=\"./assets/images/pettypecolor" . $event['type'] . ".svg\""; ?> width= "80px" height="80px" alt="">
     </div>
     <div class="petdetail__info">
       <div>
@@ -34,12 +34,12 @@
 
       <div>
         <span class="detail-label detail-label-e">Date</span>
-        <span class="detail-field detail-field-e"><?php echo $date = date('dS M Y ',strtotime($event['date']));?></span>
+        <span class="detail-field detail-field-e"><?php echo $date = date('dS M Y ',strtotime($event['mydate']));?></span>
       </div>
 
       <div>
         <span class="detail-label detail-label-e">Time</span>
-        <span class="detail-field detail-field-e"><?php echo $time = date('H:ia',strtotime($event['date']));?></span>
+        <span class="detail-field detail-field-e"><?php echo $time = date('H:ia',strtotime($event['mytime']));?></span>
       </div>
 
       <div>

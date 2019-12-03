@@ -10,19 +10,19 @@
         <option value="5">Fish</option>
         <option value="6">Other</option>
       </select>
-      <button class="add-button" onclick="processPhase1()">NEXT<br>STEP</button>
+      <button class="add-button" id="bphase1">NEXT<br>STEP</button>
     </fieldset>
 
     <fieldset class="hidden" id="phase2">
       <legend class="add-legend">What is the name of this lovely <span id="js-insanimal"></span>?</legend>
       <input class="add-input" type="text" id="aname" name="aname"><br>
-      <button class="add-button" onclick="processPhase2()">NEXT<br>STEP</button>
+      <button class="add-button" id="bphase2">NEXT<br>STEP</button>
     </fieldset>
 
     <fieldset class="hidden" id="phase3">
       <legend class="add-legend">When was <span id="js-insaname"></span> born to this world?</legend>
       <input class="add-input" type="date" id="abirthdate" name="abirthdate"><br>
-      <button class="add-button" onclick="processPhase3()">NEXT<br>STEP</button>
+      <button class="add-button" id="bphase3">NEXT<br>STEP</button>
     </fieldset>
 
     <fieldset class="hidden" id="phase4">
@@ -31,13 +31,13 @@
         <option value="yes">Yes!</option>
         <option value="no">No.</option>
       </select>
-      <button class="add-button" onclick="processPhase4()">NEXT<br>STEP</button>
+      <button class="add-button" id="bphase4">NEXT<br>STEP</button>
     </fieldset>
 
     <fieldset class="hidden" id="phase5">
       <legend class="add-legend">What is <span id="js-insaname4">'s chip-id?(put 0 if not known)</legend>
       <input class="add-input" type="number" id="achipid" name="achipid"><br>
-      <button onclick="processPhase5()">NEXT<br>STEP</button>
+      <button class="add-button" id="bphase5">NEXT<br>STEP</button>
     </fieldset>
 
     <fieldset class="hidden" id="phase6">
@@ -46,12 +46,12 @@
         <option value="0">Male</option>
         <option value="1">Female</span></option>
       </select>
-      <button class="add-button" onclick="processPhase6()">NEXT<br>STEP</button>
+      <button class="add-button" id="bphase6">NEXT<br>STEP</button>
     </fieldset>
 
     <fieldset class="hidden" id="phase7">
       <legend class="add-legend">Who is the owner of <span id="js-insaname7">?</legend>
       <input  class="add-input" type="text" name="aowner"><br>
-      <button class="add-button-submit" type="submit" onclick="submitForm()" value="Add Pet">ADD MY<br>PET</button>
+      <button class="add-button-submit" id="bphase7" type="submit" value="Add Pet">ADD MY<br>PET</button>
     </fieldset>
 </form>

@@ -5,7 +5,7 @@ require_once( __DIR__ . '/DAO.php');
 class EventsDAO extends DAO {
 
   public function selectAll(){
-    $sql = "SELECT *,E.id as eventid, P.type as pettype ,P.name as petname, E.name as eventname FROM `petevents` as E
+    $sql = "SELECT *,E.id as eventid, P.type as pettype ,P.name as petname, DATE(date) as mydate, TIME(date) as mytime, E.name as eventname FROM `petevents` as E
     inner join pets as P
     on E.petid = P.id";
     $stmt = $this->pdo->prepare($sql);
@@ -14,7 +14,7 @@ class EventsDAO extends DAO {
   }
 
   public function selectById($id){
-    $sql = "SELECT * FROM `petevents` WHERE `id` = :id ORDER BY `date` ASC";
+    $sql = "SELECT *,DATE(date) as mydate, TIME(date) as mytime  FROM `petevents` WHERE `id` = :id ORDER BY `date` ASC";
     $stmt = $this->pdo->prepare($sql);
     $stmt->bindValue(':id', $id);
     $stmt->execute();
@@ -53,7 +53,7 @@ class EventsDAO extends DAO {
       $stmt->bindValue(':name', $data['ename']);
       $stmt->bindValue(':description', $data['edescription']);
       $stmt->bindValue(':petid', $data['epetid']);
-      $stmt->bindValue(':date', $data['edate']);
+      $stmt->bindValue(':date', $data['edate'] . ' ' .$data['etime']);
       $stmt->bindValue(':type', $data['etype']);
       $stmt->bindValue(':location', $data['elocation']);
       $stmt->execute();

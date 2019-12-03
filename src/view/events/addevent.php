@@ -29,7 +29,7 @@
     </fieldset>
 
     <fieldset class="hidden" id="phase4e">
-      <legend class="add-legend">Want is this event about?</legend>
+      <legend class="add-legend">Please give the event a description.</legend>
       <input class="add-input add-input-big" type="text" id="edescription" name="edescription"><br>
       <button class="add-button" onclick="processPhase4e()">NEXT<br>STEP</button>
     </fieldset>

@@ -25,8 +25,8 @@
             <div class="home-events-reminder">
             <div class="link__wrapper--info">
                 <span><?php echo $event['eventname']; ?></span>
-                <span><?php echo $time = date('H:ia',strtotime($event['date']));?></span>
-                <span><?php echo $date = date('dS M Y ',strtotime($event['date']));?></span>
+                <span><?php echo $time = date('H:ia',strtotime($event['mytime']));?></span>
+                <span><?php echo $date = date('dS M Y ',strtotime($event['mydate']));?></span>
               </div>
             </div>
           </a>
